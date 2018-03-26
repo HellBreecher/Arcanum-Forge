@@ -1,5 +1,4 @@
 # Arcanum
-Minecraft Arcanum Mod
 
 Arcanum is licensed under All Rights Reserved for the time being. GitHub is strictly used for the Issue tracker. 
 
