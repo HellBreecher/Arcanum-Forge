@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "arcanum:block/wall_greensapphiretorch"
+    },
+    "facing=north": {
+      "model": "arcanum:block/wall_greensapphiretorch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "arcanum:block/wall_greensapphiretorch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "arcanum:block/wall_greensapphiretorch",
+      "y": 180
+    }
+  }
+}

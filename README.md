@@ -1,6 +1,6 @@
 # Arcanum
 
-Arcanum is licensed under All Rights Reserved for the time being. GitHub is strictly used for the Issue tracker. 
+Arcanum is licensed under GNU GPL v3.  
 
 If you dont know the PROPER way to submit an "Issue" go watch this guide - https://www.youtube.com/watch?v=lKfOwkV0nNI - By JadedCat
 

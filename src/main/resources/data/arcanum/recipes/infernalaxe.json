@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:infernalaxe", "data": 0, "count": 1 },
+    "pattern": [ " X ", "XYX", " X " ],
+    "key" : {
+        "X": { "item": "arcanum:infernaldiamond" },
+        "Y": { "item": "arcanum:infernaldiamondaxe" }
+    }
+}

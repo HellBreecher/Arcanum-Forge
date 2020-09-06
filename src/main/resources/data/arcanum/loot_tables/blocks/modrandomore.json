@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "arcanum:greensapphire"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "arcanum:blooddiamond"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "arcanum:voiddiamond"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:arcfurnace", "data": 0, "count": 1 },
+    "pattern": [ "XXX", "XYX", "XXX" ],
+    "key" : {
+        "X": { "item": "arcanum:infernaldiamond" },
+        "Y": { "item": "arcanum:mcufurnace" }        
+    }
+}

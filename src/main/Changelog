@@ -1,0 +1,313 @@
+###Arcanum 1.16.2 - 5.0.0.0-beta1:
+	*API
+		Updated to Minecraft 1.16.2
+		Updated to Forge Loader Version 33
+	*Item
+		Emtpy Can stack increase to 64
+		Red Cup stack increase to 64
+	*WorldGen
+		Decrease Green Sapphire Ore max vein size to 8
+		Decreased Blood Diamond max Y spawn to 16
+		Decreased Void Diamond max Y spawn to 12
+		Removed intentional group ore spawning
+	*Currently Still Needing
+		MCU Furnace
+		Arc Furnace
+		Arc Wrench capability
+		Infernal tool special capabilities
+		Config Generation
+		Ore Dictionary (Tags)
+	
+###Arcanum 1.12.2 - 4.3.0.0
+    *Updated Forge to 1.12.2 - 14.23.5.2772
+    *Changed package structure
+    *Added Config
+        Arc Furnace item return amount
+        Arc Furnace smelt speed
+        MCU Furnace item return amount
+        MCU Furnace smelt speed
+###Arcanum 1.12.2 - 4.2.8.0
+    *Bug Fixes:
+        Infernal Tools returning 16x whatever is mined
+    *Crafting Changes:
+        Changed all armor recipes to a tier system
+		All recipes now use JSON system
+    *Tool System Changes:
+	    Adjusted auto-smelting method to fix bug, system now works slightly differently
+###Arcanum 1.12.2 - 4.2.7.1
+    *Bug Fixes:
+        Infernal Diamond Armor requiring Boots for each recipe
+    *Ore Dictionary:
+        Void Diamond no longer registered as Diamond
+        Blood Diamond no longer registered as Diamond
+###Arcanum 1.12.2 - 4.2.7.0
+    *Recipe Changes:
+        All armor now has a tiered system
+        Integrated Ore Dictionary into recipes
+    *Ore Dictionary:
+        Infernal Diamond no longer registered as Diamond
+    *Bug Fixes:
+        Infernal Armor not being craftable due to ore dictionary registry
+###Arcanum 1.12.2 - 4.2.6.2
+    *Bug Fixes:
+        Infernal Armor kicking player from server
+###Arcanum 1.12.2 - 4.2.6.1
+    *Updated Forge to 1.12.2 - 14.23.4.2729
+    *Bug Fixes:
+        Ore Dictionary registrations not working	
+###Arcanum-1.12.2 - 4.2.6.0
+	*New Blocks:
+		Fermenter
+	*New Recipes:
+		Fermenter
+		Corton Wine
+		Beer (Unfermented/Fermented)
+	*Other Additions:
+		Custom Fermenter Recipes
+	*Bug Fixes:
+		Infernal armor not making player invincible on servers w/ full set on
+		Infernal armor changing FOV w/ full set on
+		Green Sapphire Coal not having burn time
+###Arcanum-1.12.2 - 4.2.5.1-b
+	*Bug Fixes:
+		Green Sapphire Coal only Craftable w/ Green Sapphire Coal Block
+		Infernal Armor causing player to be kicked from servers when equipped
+###Arcanum-1.12.2 - 4.2.5.0-b
+	*Bug Fixes:
+		MCU Furnace Active Texture not working properly
+		ArcFurnace Active Texture not working properly
+		MCU Furnace Breakable w/ hand
+		ArcFurnace Breakable w/ hand
+		MCU Furnace not allowing item extraction
+		ArcFurnace not allowing item extraction
+		GreenSapphire Coal Block not Shift Clicking into MCU Furnace
+	*Recipes Added:
+		GreenSapphire Coal Block > 9x Green Sapphire Coal
+###Arcanum-1.12.2 - 4.2.4.0-b1
+	*Blocks Added:
+		MCU Furnace
+		Arc Furnace
+	*Recipes Added:
+		MCU Furnace
+		Arc Furnace
+		Void Diamond
+		Blood Diamond
+		Green Sapphire
+		Bone
+		Flesh
+		Gunpowder
+	*Ore Dictionary Changes:
+		MCU Furnace -> Furnace
+		Arc Furnace -> Furnace
+		Empty Can -> Bottle
+	*Bug Fixes:
+		Sulfur block recipe producing Flesh block
+###Arcanum-1.12.2 - 4.2.3.0-b1
+	*Added Smelting Recipes:
+		Green Sapphire Ore
+		Blood Diamond Ore
+		Void Diamond Ore
+	*Added Crafting Recipes:
+		Arc Wrench
+	*Tool Updates:
+		Infernal Pickaxe Smelts Blocks & drops items at player position
+		Infernal Axe drops items at player position
+		Infernal Shovel drops items at player position
+	*Items Added:
+		Arc Wrench
+###Arcanum-1.12.2 - 4.2.2.0-b1
+	*Items Added:
+		Infernal Toolset
+		Green Sapphire Armor Set
+		Blood Diamond Armor Set
+		Void Diamond Armor Set
+		Infernal Diamond Armor Set
+		Infernal Armor Set
+	*Added Recipes:
+		Infernal Tool Set
+		Green Sapphire Armor Set
+		Blood Diamond Armor Set
+		Void Diamond Armor Set
+		Infernal Diamond Armor Set
+		Infernal Armor Set
+	*Change Recipes:
+		Infernal Diamond Tool Set
+		
+###Arcanum-1.12.1 - 4.2.1.0-b1
+	*Items Added:
+		Infernal Diamond Tool Set
+	*Textures Changed:
+		Infernal Diamond Sword
+	*Bug Fixes:
+		Green Sapphire Shear durability being default
+		Blood Diamond Shear durability being default
+		Void Diamond Shear durability being default
+###Arcanum-1.12.1 - 4.2.0.0-b2
+	*Forges Versioning Convention is now being used (hopefully properly... I think so)
+	*Material Changes :
+		 Void Diamond Material Efficiency increased due to being lower than Blood Diamond in previous release
+		 Infernal Diamond Material Efficiency increased due to needing to be higher than Void Diamond
+###Arcanum-1.12.1 - 0.0.4.0-b1
+	*Items Added :
+		Green Sapphire Coal
+	*Weapons Added :
+		Basic Beating Stick
+		Infernal Beating Stick
+		Infernal Diamond Sword
+	*Blocks Added :
+		Green Sapphire Coal Block
+		Green Sapphire Torch
+	*Materials Added :
+		Infernal Diamond
+		Basic Beating Stick
+		Infernal Beating Stick
+	*Materials Modified :
+		Lowered Void Diamond Material Efficiency
+		
+###Arcanum-1.12 - 0.0.3.0-b1
+	*Items Added:
+		Mountain Dew Mix
+		Mountain Dew
+		Empty Can
+		Toast
+		Hammer
+		Beer (Fermented & Unfermented)
+		Crushed Apples
+		Apple Cider
+		Warm Apple Cider
+	*World Gen:
+		Lowered spawn of Green Sapphire Ore... Again...
+###Arcanum-1.12 - 0.0.2.0-b1
+	*Added Items:
+		Green Sapphire Sword
+		Blood Diamond Sword
+		Void Diamond Sword
+		Infernal Diamond
+		Corton Wine
+	*World Gen:
+		Lowered Generation for Green Sapphires
+	*Block Properties:
+		Raised resistance of Green Sapphire Ore
+		Raised resistance of Blood Diamond Ore
+		Raised resistance of Void Diamond Ore
+		Raised resistance of Vanilla Random Ore
+		Raised resistance of Mod Random Ore
+		Raised resistance of Green Sapphire Block
+		Raised resistance of Blood Diamond Block
+		Raised resistance of Void Diamond Block
+	*Material Properties:
+		Lowered damage of Blood Diamond Material
+		Raised damage of Void Diamond Material
+###Arcanum-1.12 - 0.0.1.0-b1
+	*Currently a WIP (Work In Progress) version. BACKUP WORLDS BEFORE ADDING &/OR UPDATING!!!
+	*Blocks Added:
+		Green Spaphire Ore
+		Blood Diamond Ore
+		Void Diamond Ore
+		Vanilla Random Ore
+		Mod Random Ore
+		Bone Ore
+		Flesh Ore
+		Sulfur Ore
+		Green Sapphire Block
+		Blood Diamond Block
+		Void Diamond Block
+		Bone Block
+		Flesh Block
+		Sulfur Block
+	*Items Added:
+		Green Sapphire
+		Blood Diamond
+		Void Diamond
+		Quartz Stick
+		Blood Diamond Stick
+	*Tools Added:
+		Green Sapphire Tool set
+		Blood Diamond Tool set
+		Void Diamond Tool Set
+	*Added World Gen:
+		Green Sapphire Ore
+		Blood Diamond Ore
+		Void Diamond Ore
+		Vanilla Random Ore
+		Mod Random Ore
+		Bone Ore
+		Flesh Ore
+		Sulfur Ore
+
+###Arcanum-1.7.10 - Beta 1.1.8
+	*BugFix:
+	    Server crash when mining WoodPlanks with Infernal Axe
+    	Infernal Tools voiding mined items when inventory is full
+	*Added more items to Ore Dictionary allowing for larger compatibility w/ Crafting (such as Toast, and Sapphires)
+###Arcanum-1.7.10 - Beta 1.1.7
+	*Added Recipes
+		Added Recipe for the ArcWrench (dont know why it didnt have one..)
+###Arcanum-1.7.10 - Beta 1.1.6
+	*Bug Fix:
+    	Infernal Pick mining Magical Crops ores crashes client/server
+###Arcanum-1.7.10 - Beta 1.1.5
+	*Bug Fix:
+   		Server crashes when mining stone with an Infernal Pick
+###Arcanum-1.7.10 - Beta 1.1.4
+	*Bug Fix:
+	    MCUFurnace shift-clicking adding items to all slots
+    	MCUFurnace not allowing Fuel Blocks to be input from back
+    	ArcFurnace allowing anything to be input from top/sides
+###Arcanum-1.7.10 - Beta 1.1.3
+	*Bug Fix:
+	    Fermenter not showing up in Creative Tab
+    	Fermenter not having proper name (showing "tile.Fermenter.name" instead of just "Fermenter")
+###Arcanum-1.7.10 - Beta 1.1.2
+	*Bug Fixes:
+	    Fixed MCUFurnace not allowing hopper input/output ( this includes item cables too)
+    	Fixed ArcFurnace not allowing hopper input/output ( this includes item cables too )
+	*Added :
+	    Fermenter
+    	Beer (Unfermented/Fermented)
+    	Infernal Toolset (pickaxe, axe, shovel, shears, hoe)
+    	More block transformations with the magic hammer
+    	Ore Registration for the Ore Dictionary (allows for things like the Digital Miner to mine ores from my mod.. and some of its items to be used in other crafting recipes from other mods)
+	*Changed :
+	    Textures for ALL ores (including BloodDiamond ore, GreenSapphire ore, VoidDiamond ore, Mod Random ore, Vanilla Random ore)
+	*Removed:
+	    Energy Cables (as there is currently no use for them, and wont be until 1.8 versions)
+###Arcanum-1.7.10 - Beta 1.1.1
+	*Bug Fixes:
+	    MCUFurnace Not working after world is re-entered
+    	ArcFurnace Not working after world is re-entered
+###Arcanum-1.7.10 - Beta 1.1.0
+	*GUI/TileEnity/Container
+		ArcFurnace Changed back to DualSlot furnace no longer requiring fuel
+###Arcanum-1.7.10 - Beta 1.0.9
+	*Bug Fixes:
+	     ArcFurnace:
+    	    Duplicating Smelted Item
+        	Not saving inventory after world exit
+        	Not properly detecting stack size (shows 1 when 64 are placed in)
+###Arcanum-1.7.10 - Beta 1.0.8
+	*Bug Fixes:
+		Fixed duplication bug with ArcFurnace
+	*Texures Updates:
+		Changed ArcFurnace texture
+###Arcanum-1.7.10 - Beta 1.0.7
+	*Tools Added:
+		Added Infusion Wand (has auto-smelt feature)
+	*Tile Entities Added:
+		Added ArcFurnace
+###Arcanum-1.7.10 - Beta 1.0.6
+	*New Name (Arcanum)
+	*Begun adding Magical Concept (not much to show just yet for it though)
+	*Adding more of a Tiering system
+	
+###MCUpgrade-1.7.10 - Beta 1.0.5
+###MCUpgrade-1.7.10 - Beta 1.0.4
+###MCUpgrade-1.7.10 - Beta 1.0.3
+
+###MCUpgrade 1.0.2
+###MCUpgrade 1.0.1
+###MCUpgrade V1.0.0 
+
+
+
+

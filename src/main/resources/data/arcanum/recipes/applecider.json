@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:applecider", "data": 0, "count": 1 },
+    "pattern": [ "X", "Y"],
+    "key" : {
+        "X": { "item": "arcanum:crushedapple" },
+        "Y": { "item": "minecraft:potion" }
+    }
+}

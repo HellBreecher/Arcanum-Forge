@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:blooddiamondchestplate", "data": 0, "count": 1 },
+    "pattern": [ "Y Y", "XZX", "XXX" ],
+    "key" : {
+        "X": { "item": "arcanum:blooddiamond" },
+        "Y": { "item": "minecraft:quartz" },
+        "Z": { "item": "arcanum:greensapphirechestplate"}      
+    }
+}

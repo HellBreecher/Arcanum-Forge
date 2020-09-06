@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:greensapphirehelmet", "data": 0, "count": 1 },
+    "pattern": [ "XXX", "X X" ],
+    "key" : {
+        "X": { "item": "arcanum:greensapphire" }      
+    }
+}

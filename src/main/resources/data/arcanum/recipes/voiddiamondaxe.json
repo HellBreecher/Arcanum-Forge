@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:voiddiamondaxe", "data": 0, "count": 1 },
+    "pattern": [ "XX ", "XY ", " Y " ],
+    "key" : {
+        "X": { "item": "arcanum:voiddiamond" },
+        "Y": { "item": "arcanum:blooddiamondstick" }        
+    }
+}

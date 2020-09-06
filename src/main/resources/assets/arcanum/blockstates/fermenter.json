@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "facing=north,fermenting=false": { "model": "arcanum:fermenter" },
+        "facing=east,fermenting=false": { "model": "arcanum:fermenter", "y": 90 },
+        "facing=south,fermenting=false": { "model": "arcanum:fermenter", "y": 180},
+        "facing=west,fermenting=false": { "model": "arcanum:fermenter", "y": 270},
+        "facing=north,fermenting=true": { "model": "arcanum:fermenter" },
+        "facing=east,fermenting=true": { "model": "arcanum:fermenter", "y":90},
+        "facing=south,fermenting=true": { "model": "arcanum:fermenter", "y":180},
+        "facing=west,fermenting=true": { "model": "arcanum:fermenter", "y":270}
+    }
+}

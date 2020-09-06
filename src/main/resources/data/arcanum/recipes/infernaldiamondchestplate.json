@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:infernaldiamondchestplate", "data": 0, "count": 1 },
+    "pattern": [ "X X", "XZX", "XXX" ],
+    "key" : {
+        "X": { "item": "arcanum:infernaldiamond" },
+        "Z": { "item": "arcanum:voiddiamondchestplate" }      
+    }
+}

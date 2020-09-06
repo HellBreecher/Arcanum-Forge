@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "burning=false,facing=north": { "model": "arcanum:mcufurnace" },
+        "burning=false,facing=east": { "model": "arcanum:mcufurnace", "y": 90 },
+        "burning=false,facing=south": { "model": "arcanum:mcufurnace", "y": 180},
+        "burning=false,facing=west": { "model": "arcanum:mcufurnace", "y": 270},
+        "burning=true,facing=north": { "model": "arcanum:active_mcufurnace" },
+        "burning=true,facing=east": { "model": "arcanum:active_mcufurnace", "y":90},
+        "burning=true,facing=south": { "model": "arcanum:active_mcufurnace", "y":180},
+        "burning=true,facing=west": { "model": "arcanum:active_mcufurnace", "y":270}
+    }
+}

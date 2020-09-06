@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:greensapphiretorch", "data": 0, "count": 64 },
+    "pattern": [ "Y", "X"],
+    "key" : {
+        "Y": { "item": "arcanum:greensapphirecoal" },
+        "X": { "tag": "forge:rods/wooden" }  
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "particle": "arcanum:blocks/fermenter_front",
+        "up": "arcanum:blocks/fermenter_top",
+        "down": "arcanum:blocks/fermenter_top",
+        "north": "arcanum:blocks/fermenter_front",
+        "east": "arcanum:blocks/fermenter_sides",
+        "south": "arcanum:blocks/fermenter_sides",
+        "west": "arcanum:blocks/fermenter_sides"
+        
+    }	
+}

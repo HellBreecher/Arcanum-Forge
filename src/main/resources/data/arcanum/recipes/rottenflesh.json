@@ -1,0 +1,7 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "result": { "item": "minecraft:rotten_flesh", "data": 0, "count": 4 },
+    "ingredients": [
+        { "item": "arcanum:fleshblock" }
+    ]
+}

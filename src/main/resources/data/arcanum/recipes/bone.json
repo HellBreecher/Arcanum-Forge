@@ -1,0 +1,7 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "result": { "item": "minecraft:bone", "data": 0, "count": 4 },
+    "ingredients": [
+        { "item": "arcanum:boneblock" }
+    ]
+}
