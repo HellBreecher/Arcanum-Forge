@@ -2,25 +2,6 @@
   "homepage": "arcanum.hellbreecher.com",
   "<mcversion>": {
     "<modversion>": "<Arcanum 1.16.2 - 5.0.0.0-beta1>"
-    ###Arcanum 1.16.2 - 5.0.0.0-beta1:
-	*API
-		Updated to Minecraft 1.16.2
-		Updated to Forge Loader Version 33
-	*Item
-		Emtpy Can stack increase to 64
-		Red Cup stack increase to 64
-	*WorldGen
-		Decrease Green Sapphire Ore max vein size to 8
-		Decreased Blood Diamond max Y spawn to 16
-		Decreased Void Diamond max Y spawn to 12
-		Removed intentional group ore spawning
-	*Currently Still Needing
-		MCU Furnace
-		Arc Furnace
-		Arc Wrench capability
-		Infernal tool special capabilities
-		Config Generation
-		Ore Dictionary (Tags)
     ...
   },
   ...
