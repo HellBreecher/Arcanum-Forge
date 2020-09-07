@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "blooddiamondshovel", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:blooddiamondshovel", "count": 1 },
     "pattern": [ "X", "Y", "Y" ],
     "key" : {
         "X": { "item": "arcanum:blooddiamond" },

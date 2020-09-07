@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:arcwrench", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:arcwrench", "count": 1 },
     "pattern": [ " X ", " YX", "Y  "],
     "key" : {
         "X": { "item": "arcanum:greensapphire" },

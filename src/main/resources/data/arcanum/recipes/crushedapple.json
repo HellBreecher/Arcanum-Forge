@@ -1,9 +1,9 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:crushedapple", "data": 0, "count": 6 },
+    "result": { "item": "arcanum:crushedapple", "count": 6 },
     "pattern": [ "X", "Y"],
     "key" : {
-        "X": { "type": "forge:ore_dict", "ore": "itemHammer" },
+        "X": { "item": "arcanum:hammer" },
         "Y": { "item": "minecraft:apple" }
     }
 }

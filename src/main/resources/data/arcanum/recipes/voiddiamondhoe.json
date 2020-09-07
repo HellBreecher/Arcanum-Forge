@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:voiddiamondhoe", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:voiddiamondhoe", "count": 1 },
     "pattern": [ "XX ", " Y ", " Y " ],
     "key" : {
         "X": { "item": "arcanum:voiddiamond" },

@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:mcufurnace", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:mcufurnace", "count": 1 },
     "pattern": [ "XYX", "YZY", "XYX" ],
     "key" : {
         "X": { "item": "arcanum:voiddiamond" },

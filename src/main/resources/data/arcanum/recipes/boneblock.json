@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:boneblock", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:boneblock", "count": 1 },
     "pattern": [ "XX", "XX"],
     "key" : {
         "X": { "item": "minecraft:bone" }

@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:hammer", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:hammer", "count": 1 },
     "pattern": [ " X ", " YX", "Y  "],
     "key" : {
         "X": { "item": "minecraft:iron_ingot" },

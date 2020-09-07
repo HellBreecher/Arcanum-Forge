@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:infernaldiamondsword", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:infernaldiamondsword", "count": 1 },
     "pattern": [ "Y", "X", "Z" ],
     "key" : {
         "X": { "item": "arcanum:infernaldiamond" },

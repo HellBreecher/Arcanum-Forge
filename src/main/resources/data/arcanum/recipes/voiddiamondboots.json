@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:voiddiamondboots", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:voiddiamondboots", "count": 1 },
     "pattern": [ "YZY", "X X" ],
     "key" : {
         "X": { "item": "arcanum:voiddiamond" },

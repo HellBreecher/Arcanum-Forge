@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shapeless",
-    "result": { "item": "minecraft:gunpowder", "data": 0, "count": 4 },
+    "result": { "item": "minecraft:gunpowder", "count": 4 },
     "ingredients": [
         { "item": "arcanum:sulfurblock" }
     ]

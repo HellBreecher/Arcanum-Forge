@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shapeless",
-    "result": { "item": "arcanum:mountaindewmix", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:mountaindewmix", "count": 1 },
     "ingredients" : [
         { "item": "minecraft:glowstone_dust" },
         { "item": "minecraft:green_dye" },

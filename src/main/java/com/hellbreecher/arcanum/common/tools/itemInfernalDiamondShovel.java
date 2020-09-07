@@ -3,7 +3,7 @@ package com.hellbreecher.arcanum.common.tools;
 import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
 
-import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,8 +18,9 @@ public class itemInfernalDiamondShovel extends ShovelItem {
 
 	public void onCreated(ItemStack stack, World worldIn, PlayerEntity playerIn) {
         if (!stack.isEnchanted()) {
-            stack.addEnchantment(Enchantment.getEnchantmentByID(16), 5);
-            stack.addEnchantment(Enchantment.getEnchantmentByID(20), 10);
+            stack.addEnchantment(Enchantments.FORTUNE, 5);
+            stack.addEnchantment(Enchantments.UNBREAKING, 10);
+            stack.addEnchantment(Enchantments.MENDING, 1);
         }
     }
 }

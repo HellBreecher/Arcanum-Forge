@@ -8,7 +8,7 @@ import com.hellbreecher.arcanum.common.core.ArcanumArmor;
 import com.hellbreecher.arcanum.common.lib.EnumArmorMaterial;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -27,7 +27,21 @@ public class itemInfernalArmor extends ArmorItem {
 
 	public void onCreated(ItemStack stack, World worldIn, PlayerEntity playerIn) {
         if (!stack.isEnchanted()) {
-            stack.addEnchantment(Enchantment.getEnchantmentByID(20), 5);
+            stack.addEnchantment(Enchantments.FIRE_ASPECT, 5);
+            stack.addEnchantment(Enchantments.FIRE_PROTECTION, 5);
+            stack.addEnchantment(Enchantments.PROTECTION, 5);
+            stack.addEnchantment(Enchantments.BLAST_PROTECTION, 5);
+            stack.addEnchantment(Enchantments.THORNS, 5);
+            if(stack.equals(new ItemStack(ArcanumArmor.infernalhelmet.get()))){
+            	stack.addEnchantment(Enchantments.AQUA_AFFINITY, 5);
+            }else if (stack.equals(new ItemStack(ArcanumArmor.infernalchestplate.get()))) {
+            	stack.addEnchantment(Enchantments.PROJECTILE_PROTECTION, 5);
+            }else if (stack.equals(new ItemStack(ArcanumArmor.infernalleggings.get()))) {
+            	stack.addEnchantment(Enchantments.DEPTH_STRIDER, 5);
+            }else if (stack.equals(new ItemStack(ArcanumArmor.infernalboots.get()))) {
+            	stack.addEnchantment(Enchantments.FEATHER_FALLING, 5);
+            }
+
         }
     }
 	

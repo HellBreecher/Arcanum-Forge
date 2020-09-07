@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:infernaldiamondpickaxe", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:infernaldiamondpickaxe", "count": 1 },
     "pattern": [ "XYX", " Z ", " Z " ],
     "key" : {
         "X": { "item": "arcanum:infernaldiamond" },

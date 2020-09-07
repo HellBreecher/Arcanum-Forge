@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shapeless",
-    "result": { "item": "arcanum:greensapphire", "data": 0, "count": 9 },
+    "result": { "item": "arcanum:greensapphire", "count": 9 },
     "ingredients": [
         { "item": "arcanum:greensapphireblock" }
     ]

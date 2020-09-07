@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:sulfurblock", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:sulfurblock", "count": 1 },
     "pattern": [ "XX", "XX"],
     "key" : {
         "X": { "item": "minecraft:gunpowder" }

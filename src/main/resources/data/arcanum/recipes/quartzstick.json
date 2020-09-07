@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:quartzstick", "data": 0, "count": 4 },
+    "result": { "item": "arcanum:quartzstick", "count": 4 },
     "pattern": [ " X ", "XYX", " X " ],
     "key" : {
         "X": { "item": "minecraft:quartz" },

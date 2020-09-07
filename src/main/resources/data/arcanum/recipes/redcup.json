@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:redcup", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:redcup", "count": 1 },
     "pattern": [ "Y", "X"],
     "key" : {
         "X": { "item": "arcanum:emptycan" },

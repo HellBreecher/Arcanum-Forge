@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:emptycan", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:emptycan", "count": 1 },
     "pattern": [ "X", "X"],
     "key" : {
         "X": { "item": "minecraft:iron_ingot" }

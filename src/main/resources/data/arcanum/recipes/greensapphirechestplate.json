@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:greensapphirechestplate", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:greensapphirechestplate", "count": 1 },
     "pattern": [ "X X", "XXX", "XXX" ],
     "key" : {
         "X": { "item": "arcanum:greensapphire" }      

@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:mountaindew", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:mountaindew", "count": 1 },
     "pattern": [ "X", "Y", "Z"],
     "key" : {
         "X": { "item": "arcanum:mountaindewmix" },

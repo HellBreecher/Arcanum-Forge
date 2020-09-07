@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:fleshblock", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:fleshblock", "count": 1 },
     "pattern": [ "XX", "XX"],
     "key" : {
         "X": { "item": "minecraft:rotten_flesh" }

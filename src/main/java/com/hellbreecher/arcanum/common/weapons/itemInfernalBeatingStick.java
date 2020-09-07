@@ -3,7 +3,7 @@ package com.hellbreecher.arcanum.common.weapons;
 import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
 
-import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
@@ -17,11 +17,11 @@ public class itemInfernalBeatingStick extends SwordItem {
 
 	public void onCreated(ItemStack stack, World worldIn, PlayerEntity playerIn) {
         if (!stack.isEnchanted()) {
-            stack.addEnchantment(Enchantment.getEnchantmentByID(18), 10);
-            stack.addEnchantment(Enchantment.getEnchantmentByID(19), 10);
-            stack.addEnchantment(Enchantment.getEnchantmentByID(17), 10);
-            stack.addEnchantment(Enchantment.getEnchantmentByID(21), 10);
-            stack.addEnchantment(Enchantment.getEnchantmentByID(20), 10);
+            stack.addEnchantment(Enchantments.BANE_OF_ARTHROPODS, 10);
+            stack.addEnchantment(Enchantments.SMITE, 10);
+            stack.addEnchantment(Enchantments.KNOCKBACK, 10);
+            stack.addEnchantment(Enchantments.LOOTING, 10);
+            stack.addEnchantment(Enchantments.FIRE_ASPECT, 10);
         }
     }
 }

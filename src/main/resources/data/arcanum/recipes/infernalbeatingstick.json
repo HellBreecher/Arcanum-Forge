@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:infernalbeatingstick", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:infernalbeatingstick", "count": 1 },
     "pattern": [ "XYX", "XZX", "XYX" ],
     "key" : {
         "X": { "item": "arcanum:infernaldiamond" },

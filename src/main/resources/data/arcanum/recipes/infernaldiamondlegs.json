@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:infernaldiamondleggings", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:infernaldiamondleggings", "count": 1 },
     "pattern": [ "XXX", "XZX", "X X" ],
     "key" : {
         "X": { "item": "arcanum:infernaldiamond" },

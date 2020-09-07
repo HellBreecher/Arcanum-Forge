@@ -7,7 +7,7 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CampfireBlock;
-import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
@@ -31,7 +31,7 @@ public class itemInfernalDiamond extends Item {
 
 	public void onCreated(ItemStack stack, World worldIn, PlayerEntity playerIn) {
         if (!stack.isEnchanted()) {
-            stack.addEnchantment(Enchantment.getEnchantmentByID(20), 5);
+            stack.addEnchantment(Enchantments.FIRE_ASPECT, 5);
         }
     }
 

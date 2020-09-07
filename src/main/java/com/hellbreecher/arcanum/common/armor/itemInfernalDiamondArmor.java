@@ -7,7 +7,7 @@ import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.core.ArcanumArmor;
 import com.hellbreecher.arcanum.common.lib.EnumArmorMaterial;
 
-import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -26,7 +26,8 @@ public class itemInfernalDiamondArmor extends ArmorItem {
 
     public void onCreated(ItemStack stack, World worldIn, PlayerEntity playerIn) {
         if (!stack.isEnchanted()) {
-            stack.addEnchantment(Enchantment.getEnchantmentByID(20), 5);
+            stack.addEnchantment(Enchantments.FIRE_ASPECT, 5);
+            stack.addEnchantment(Enchantments.FIRE_PROTECTION, 5);
         }
     }
 

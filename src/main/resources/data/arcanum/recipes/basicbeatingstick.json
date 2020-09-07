@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:basicbeatingstick", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:basicbeatingstick", "count": 1 },
     "pattern": [ "XYX", "XYX", "XYX" ],
     "key" : {
         "X": { "item": "arcanum:greensapphire" },

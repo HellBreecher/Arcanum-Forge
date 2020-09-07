@@ -1,6 +1,6 @@
 {
     "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:beerunfermented", "data": 0, "count": 1 },
+    "result": { "item": "arcanum:unfermentedbeer", "count": 1 },
     "pattern": [ "XXX", "XYX", "XZX"],
     "key" : {
         "X": { "item": "minecraft:wheat" },
