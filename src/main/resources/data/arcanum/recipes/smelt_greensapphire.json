@@ -1,0 +1,8 @@
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "arcanum:greensapphireore"
+  },
+  "result": "arcanum:greensapphire",
+  "experience": 1.0,
+  "cookingtime": 200
+}

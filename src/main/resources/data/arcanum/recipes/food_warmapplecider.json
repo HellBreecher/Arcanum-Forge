@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "arcanum:applecider"
+  },
+  "result": "arcanum:warmapplecider",
+  "experience": 1.0,
+  "cookingtime": 200
+}

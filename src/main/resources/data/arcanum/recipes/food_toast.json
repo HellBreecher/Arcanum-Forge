@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:bread"
+  },
+  "result": "arcanum:toast",
+  "experience": 1.0,
+  "cookingtime": 200
+}
