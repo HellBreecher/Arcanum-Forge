@@ -1,7 +1,6 @@
 package com.hellbreecher.arcanum.common.blocks.container;
 
 import com.hellbreecher.arcanum.common.blocks.tile.tileentityArcFurnace;
-import com.hellbreecher.arcanum.common.core.ArcanumContainerTypes;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -23,28 +22,35 @@ import net.minecraft.util.IntArray;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.fml.RegistryObject;
 
-public class containerArcFurnace extends RecipeBookContainer<IInventory> {
+public abstract class AbstractArcFurnaceContainer extends RecipeBookContainer<IInventory> {
+    
+	private final IInventory furnaceInv;
+	private final IIntArray furnaceData;
+	protected final World world;
+	private final IRecipeType<? extends AbstractCookingRecipe> recipeType;
+	private final RecipeBookCategory recipeCat;
+	
+    //server
+    protected AbstractArcFurnaceContainer(ContainerType<?> arcfurnaceContainer, IRecipeType<? extends AbstractCookingRecipe> recipeType, RecipeBookCategory recipeCat, int index, PlayerInventory playerInv) {
+    	this(arcfurnaceContainer, recipeType, recipeCat, index, playerInv, new Inventory(3), new IntArray(4));
+    }
 
-	//server
-	public containerArcFurnace(ContainerType<?> arcfurnaceContainer, IRecipeType<? extends AbstractCookingRecipe> recipeType, RecipeBookCategory recipeCat, int index, PlayerInventory playerInv) {
-		this(arcfurnaceContainer, recipeType, recipeCat, index, playerInv, new Inventory(3), new IntArray(4));
-	}
-
-	//Client
-	public containerArcFurnace(ContainerType<?> arcfurnaceContainer, IRecipeType<? extends AbstractCookingRecipe> recipeType, RecipeBookCategory recipeCat, int index, PlayerInventory playerInv, IInventory furnaceInv, IIntArray fields) {
+    //Client
+    protected AbstractArcFurnaceContainer(ContainerType<?> arcfurnaceContainer, IRecipeType<? extends AbstractCookingRecipe> recipeType, RecipeBookCategory recipeCat, int index, PlayerInventory playerInv, IInventory furnaceInv, IIntArray fields) {
 		super(arcfurnaceContainer, index);
-		this.recipeType = recipeType;
-	    this.recipeCat = recipeCat;
-	    assertInventorySize(furnaceInv, 2);
-	    assertIntArraySize(fields, 4);
-	    this.furnaceInv = furnaceInv;
-	    this.furnaceData = fields;
-	    this.world = playerInv.player.world;
+    	this.recipeType = recipeType;
+        this.recipeCat = recipeCat;
+        assertInventorySize(furnaceInv, 2);
+        assertIntArraySize(fields, 4);
+        this.furnaceInv = furnaceInv;
+        this.furnaceData = fields;
+        this.world = playerInv.player.world;
 		
-	    int startX = 8;
-	    int slotSizePlus2 = 18;
-	    
+        int startX = 8;
+        int slotSizePlus2 = 18;
+        
 		//Hotbar
 		int hotbarY = 142;
 		for (int column = 0; column < 9; column++) {
@@ -62,21 +68,7 @@ public class containerArcFurnace extends RecipeBookContainer<IInventory> {
 		//Furnace Slots
 		this.addSlot(new Slot(furnaceInv, 0, 50, 35));
 		this.addSlot(new FurnaceResultSlot(playerInv.player, furnaceInv, 1, 116, 35));
-	} 
-
-	public static containerArcFurnace createArcFurnace(int id, PlayerInventory playerInventoryIn) {
-		return new containerArcFurnace(ArcanumContainerTypes.arcfurnace.get(), IRecipeType.SMELTING, RecipeBookCategory.FURNACE, id, playerInventoryIn);
-	}
-	
-	public static containerArcFurnace createArcFurnace(int id, PlayerInventory playerInventoryIn, IInventory furnaceInventoryIn, IIntArray fields) {
-		return new containerArcFurnace(ArcanumContainerTypes.arcfurnace.get(), IRecipeType.SMELTING, RecipeBookCategory.FURNACE, id, playerInventoryIn, furnaceInventoryIn, fields);
-	}
-	
-	private final IInventory furnaceInv;
-	private final IIntArray furnaceData;
-	protected final World world;
-	private final IRecipeType<? extends AbstractCookingRecipe> recipeType;
-	private final RecipeBookCategory recipeCat;    
+    }    
     
     public boolean canInteractWith(PlayerEntity playerIn) {
     	return this.furnaceInv.isUsableByPlayer(playerIn);

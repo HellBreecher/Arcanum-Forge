@@ -1,12 +1,7 @@
 package com.hellbreecher.arcanum.common.handler;
 
-import java.io.File;
-
-import net.minecraftforge.common.config.ConfigCategory;
-import net.minecraftforge.common.config.Configuration;
-
 public class IConfigHandler {
-	
+	/**
     public static Configuration config;
     private static String file = "config/Arcanum.cfg";
 
@@ -324,5 +319,5 @@ public class IConfigHandler {
         } finally {
             config.save();
         }
-    }
+    } */
 }

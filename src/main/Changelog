@@ -1,3 +1,25 @@
+###Arcanum 1.16.4 - 6.0.0.0-beta1:
+	*API
+		Updated to Minecraft 1.16.4
+		Updated to Forge Loader Version 35
+	*Blocks
+		Fixed block Harvest Level not being applied
+		Fixed block Harvest Tool not being applied
+		Added Harvest Tool for all mob drop related blocks (Wood)
+		Green Sapphire Ore hardness adjusted to 25.0F
+		Green Sapphire Block hardness adjusted to 25.0F
+		Blood Diamond Ore hardness adjusted to 35.0F
+		Blood Diamond Block hardness adjusted to 35.0F
+	*HandHeld
+		Fixed tools/weapons not showing in hand
+		*Currently Still Needing
+		MCU Furnace
+		Arc Furnace
+		Arc Wrench capability
+		Infernal tool special capabilities
+		Config Generation
+		Ore Dictionary (Tags)
+		
 ###Arcanum 1.16.2 - 5.0.0.0-beta1:
 	*API
 		Updated to Minecraft 1.16.2

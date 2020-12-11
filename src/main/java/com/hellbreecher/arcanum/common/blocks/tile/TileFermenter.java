@@ -1,29 +1,8 @@
 package com.hellbreecher.arcanum.common.blocks.tile;
 
-import com.hellbreecher.arcanum.common.blocks.blockFermenter;
-import com.hellbreecher.arcanum.common.handler.IFermenterRecipeHandler;
-
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ITickable;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
-
-public class TileFermenter extends TileEntity implements IInventory, ITickable, ISidedInventory {
+public class TileFermenter  {
+	
+	/**
     private static final int[] SLOTS_TOP = { 0 };
     private static final int[] SLOTS_BOTTOM = { 1 };
     private static final int[] SLOTS_SIDES = { 0 };
@@ -323,5 +302,5 @@ public class TileFermenter extends TileEntity implements IInventory, ITickable, 
 
     public String getName() {
         return this.hasCustomName() ? this.fermenterCustomName : "Fermenter";
-    }
+    } */
 }

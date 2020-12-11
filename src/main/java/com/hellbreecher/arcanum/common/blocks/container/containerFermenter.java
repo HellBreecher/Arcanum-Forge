@@ -1,21 +1,8 @@
 package com.hellbreecher.arcanum.common.blocks.container;
 
-import com.hellbreecher.arcanum.common.blocks.tile.TileFermenter;
-import com.hellbreecher.arcanum.common.handler.IFermenterRecipeHandler;
-
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IContainerListener;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotFurnaceOutput;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntityFurnace;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-public class containerFermenter extends Container {
+public class containerFermenter  {
+	
+	/**
     private final IInventory tileFermenter;
     private int fermentTime;
     private int totalFermentTime;
@@ -114,5 +101,5 @@ public class containerFermenter extends Container {
             slot.onTake(playerIn, itemstack1);
         }
         return itemstack;
-    }
+    }*/
 }

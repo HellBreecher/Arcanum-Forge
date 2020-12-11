@@ -1,39 +1,8 @@
 package com.hellbreecher.arcanum.common.blocks;
 
-import java.util.Random;
+public class blockFermenter  {
 
-import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.blocks.tile.TileFermenter;
-import com.hellbreecher.arcanum.common.core.ArcanumBlocks;
-import com.hellbreecher.arcanum.common.core.ArcanumItemGroups;
-import com.hellbreecher.arcanum.common.handler.IGuiHandler;
-
-import net.minecraft.block.BlockContainer;
-import net.minecraft.block.ITileEntityProvider;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockStateContainer;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumBlockRenderType;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.Rotation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-public class blockFermenter extends BlockContainer implements ITileEntityProvider {
+	/**
     private static final String name = "Fermenter";
     public static final PropertyDirection FACING = PropertyDirection.create("facing",
             EnumFacing.Plane.HORIZONTAL);
@@ -180,5 +149,5 @@ public class blockFermenter extends BlockContainer implements ITileEntityProvide
 
     public boolean isFUllCube(IBlockState state) {
         return false;
-    }
+    }*/
 }

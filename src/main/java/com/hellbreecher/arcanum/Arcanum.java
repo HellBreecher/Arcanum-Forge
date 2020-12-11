@@ -3,6 +3,7 @@ package com.hellbreecher.arcanum;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.hellbreecher.arcanum.client.ClientProxy;
 import com.hellbreecher.arcanum.common.CommonProxy;
 import com.hellbreecher.arcanum.common.core.ArcanumItemGroup;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
@@ -23,6 +24,7 @@ public class Arcanum {
     public static final Logger Logger = LogManager.getLogger(Reference.MODID);
 
     public static CommonProxy proxy;
+    public static ClientProxy client;
     public static Arcanum instance;
 
     public static final ItemGroup arcanum = new ArcanumItemGroup();
@@ -48,7 +50,7 @@ public class Arcanum {
     	
         OreWorldGen.init();
         OreWorldGen.setupGeneralWorldGen();
-    //    proxy.registerTileEntities();
+        //proxy.init();
     }
     
     private void clientRegistries(final FMLClientSetupEvent event) {  

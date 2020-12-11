@@ -2,6 +2,8 @@ package com.hellbreecher.arcanum.common.blocks.tile;
 
 import javax.annotation.Nullable;
 
+import com.hellbreecher.arcanum.common.blocks.container.containerArcFurnace;
+
 import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerInventory;
@@ -14,7 +16,6 @@ import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.tileentity.AbstractFurnaceTileEntity;
-import net.minecraft.tileentity.FurnaceTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.IIntArray;
@@ -22,7 +23,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
-public class TileArcFurnace extends AbstractFurnaceTileEntity {
+public class tileentityArcFurnace extends AbstractFurnaceTileEntity {
     private static final int[] SLOTS_TOP = { 0 };
     private static final int[] SLOTS_BOTTOM = { 1 };
     private static final int[] SLOTS_SIDES = { 0 };
@@ -33,21 +34,21 @@ public class TileArcFurnace extends AbstractFurnaceTileEntity {
     private int totalCookTime = 4;
     private String furnaceCustomName = "Arc Furnace";
     
-    public TileArcFurnace() {
+    public tileentityArcFurnace() {
         super(TileEntityType.FURNACE, IRecipeType.SMELTING);
     }
     
     protected final IIntArray furnaceData = new IIntArray() {
         public int get(int index) {
            switch(index) {
-           case 0:
-              return TileArcFurnace.this.furnaceBurnTime;
-           case 1:
-              return TileArcFurnace.this.recipesUsed;
+           case 0: 
+        	   return tileentityArcFurnace.this.furnaceBurnTime;
+           case 1: 
+        	   return tileentityArcFurnace.this.recipesUsed;
            case 2:
-              return TileArcFurnace.this.cookTime;
+              return tileentityArcFurnace.this.cookTime;
            case 3:
-              return TileArcFurnace.this.totalCookTime;
+              return tileentityArcFurnace.this.totalCookTime;
            default:
               return 0;
            }
@@ -56,16 +57,16 @@ public class TileArcFurnace extends AbstractFurnaceTileEntity {
         public void set(int index, int value) {
            switch(index) {
            case 0:
-        	   TileArcFurnace.this.furnaceBurnTime = value;
+        	   tileentityArcFurnace.this.furnaceBurnTime = value;
               break;
            case 1:
-        	   TileArcFurnace.this.recipesUsed = value;
+        	   tileentityArcFurnace.this.recipesUsed = value;
               break;
            case 2:
-        	   TileArcFurnace.this.cookTime = value;
+        	   tileentityArcFurnace.this.cookTime = value;
               break;
            case 3:
-        	   TileArcFurnace.this.totalCookTime = value;
+        	   tileentityArcFurnace.this.totalCookTime = value;
            }
 
         }
@@ -74,7 +75,7 @@ public class TileArcFurnace extends AbstractFurnaceTileEntity {
            return 4;
         }
      };
-    
+     
     public boolean hasCustomName() {
         return this.furnaceCustomName != null && !this.furnaceCustomName.isEmpty();
     }
@@ -213,7 +214,7 @@ public class TileArcFurnace extends AbstractFurnaceTileEntity {
     }
 
     public boolean canExtractItem(int index, ItemStack stack, Direction direction) {
-        if(direction == Direction.DOWN && index == 1) {
+        if(direction == Direction.DOWN && index == 2) {
             return true;
         }
         return false;
@@ -222,7 +223,7 @@ public class TileArcFurnace extends AbstractFurnaceTileEntity {
     public int getSizeInventory() {
         return this.items.size();
     }
-
+    
     public boolean isEmpty() {
         for (ItemStack itemstack : this.items){
             if (!itemstack.isEmpty()){
@@ -285,7 +286,7 @@ public class TileArcFurnace extends AbstractFurnaceTileEntity {
 		return ITextComponent.func_244388_a("Arc Furnace");
 	}
 
-	protected Container createMenu(int id, PlayerInventory player) {
-		return containerArcFurnace(id, player, this, this.furnaceData);
+	protected Container createMenu(int id, PlayerInventory playerInv) {
+		return new containerArcFurnace(null, recipeType, null, id, playerInv, this, this.furnaceData);
 	}
 }

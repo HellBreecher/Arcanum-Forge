@@ -1,16 +1,8 @@
 package com.hellbreecher.arcanum.common.handler;
 
-import java.util.Map;
-
-import com.google.common.collect.Maps;
-import com.hellbreecher.arcanum.common.core.ArcanumFood;
-
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.FMLLog;
-
 public class IFermenterRecipeHandler {
+	
+	/**
     private static final IFermenterRecipeHandler FERMENTING_BASE = new IFermenterRecipeHandler();
 
     public static IFermenterRecipeHandler instance() {
@@ -55,5 +47,5 @@ public class IFermenterRecipeHandler {
             }
         }
         return ItemStack.EMPTY;
-    }
+    } */
 }

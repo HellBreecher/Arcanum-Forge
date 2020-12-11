@@ -1,20 +1,8 @@
 package com.hellbreecher.arcanum.common.blocks.container;
 
-import com.hellbreecher.arcanum.common.blocks.tile.TileMCUFurnace;
-
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IContainerListener;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotFurnaceOutput;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-public class containerMCUFurnace extends Container {
+public class containerMCUFurnace {
+	
+	/**
     private final IInventory tileMCUFurnace;
     private int cookTime;
     private int totalCookTime;
@@ -114,5 +102,5 @@ public class containerMCUFurnace extends Container {
             slot.onTake(playerIn, itemstack1);
         }
         return itemstack;
-    }
+    }*/
 }

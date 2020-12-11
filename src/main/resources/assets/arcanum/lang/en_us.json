@@ -99,9 +99,9 @@
     "item.InfusionWand": "Infusion Wand",
     "item.arcanum.arcwrench": "Arc Wrench",
 
-    "block.MCUFurnace": "MCU Furnace",
-    "block.ArcFurnace": "Arc Furnace",
-    "block.Fermenter": "Fermenter",
+    "block.arcanum.MCUFurnace": "MCU Furnace",
+    "block.arcanum.ArcFurnace": "Arc Furnace",
+    "block.arcanum.Fermenter": "Fermenter",
 
     "item.SawDust": "SawDust",
 

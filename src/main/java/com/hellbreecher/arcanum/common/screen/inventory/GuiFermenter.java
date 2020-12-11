@@ -1,14 +1,8 @@
-package com.hellbreecher.arcanum.common.gui;
+package com.hellbreecher.arcanum.common.screen.inventory;
 
-import com.hellbreecher.arcanum.common.blocks.container.containerFermenter;
-import com.hellbreecher.arcanum.common.blocks.tile.TileFermenter;
-
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.util.ResourceLocation;
-
-public class GuiFermenter extends GuiContainer {
+public class GuiFermenter {
+	
+	/**
     private static final ResourceLocation fermenterGuiTextures = new ResourceLocation(
             "arcanum:textures/gui/Fermenter.png");
     private final InventoryPlayer inventoryPlayer;
@@ -40,5 +34,5 @@ public class GuiFermenter extends GuiContainer {
         return ticksPerItem != 0 && ticksSmeltItemSoFar != 0
                 ? ticksSmeltItemSoFar * progressIndicatorPixelWidth / ticksPerItem
                 : 0;
-    }
+    }*/
 }

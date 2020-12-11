@@ -1,12 +1,8 @@
 package com.hellbreecher.arcanum.common.core;
 
-import com.hellbreecher.arcanum.common.handler.IRecipeHandler;
-
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
-public class ArcanumSmelting extends IRecipeHandler {
+public class ArcanumSmelting  {
         
+	/**
     private static ItemStack AppleCider = new ItemStack(ArcanumFood.itemAppleCider);
     private static ItemStack WarmAppleCider = new ItemStack(ArcanumFood.itemWarmAppleCider);
     private static ItemStack Toast = new ItemStack(ArcanumFood.itemToast);
@@ -27,5 +23,5 @@ public class ArcanumSmelting extends IRecipeHandler {
         addFurnaceRecipeItem(GreenSapphireOre.getItem(), GreenSapphire, 1.0F);
         addFurnaceRecipeItem(BloodDiamondOre.getItem(), BloodDiamond, 1.0F);
         addFurnaceRecipeItem(VoidDiamondOre.getItem(), VoidDiamond, 1.0F);
-    }
+    } */
 }

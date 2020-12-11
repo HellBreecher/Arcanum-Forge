@@ -1,8 +1,10 @@
 package com.hellbreecher.arcanum.common.core;
 
 import com.hellbreecher.arcanum.Arcanum;
+import com.hellbreecher.arcanum.common.blocks.blockArcFurnace;
 import com.hellbreecher.arcanum.common.blocks.blockItemBase;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
+import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
 import com.hellbreecher.arcanum.common.lib.Reference;
 
 import net.minecraft.block.AbstractBlock;
@@ -13,6 +15,7 @@ import net.minecraft.block.TorchBlock;
 import net.minecraft.block.WallTorchBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemTier;
 import net.minecraft.item.WallOrFloorItem;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraftforge.common.ToolType;
@@ -25,15 +28,15 @@ public class ArcanumBlocks extends IRegistryHandler {
 
 	//Ore Blocks
 	public static final RegistryObject<OreBlock> greensapphireore_block = BLOCKS.register("greensapphireore", () -> new OreBlock(Block.Properties.create(Material.ROCK)
-			.sound(SoundType.STONE).hardnessAndResistance(40.0F, 1000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(3)));
+			.sound(SoundType.STONE).hardnessAndResistance(25.0F, 1000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(ItemTier.DIAMOND.getHarvestLevel()).func_235861_h_()));
 	public static final RegistryObject<OreBlock> blooddiamondore_block = BLOCKS.register("blooddiamondore", () -> new OreBlock(Block.Properties.create(Material.ROCK)
-			.hardnessAndResistance(4.0F, 2000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(5)));
+			.hardnessAndResistance(35.0F, 2000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(EnumToolMaterial.GreenSapphireTool.getHarvestLevel()).func_235861_h_()));
 	public static final RegistryObject<OreBlock> voiddiamondore_block = BLOCKS.register("voiddiamondore", () -> new OreBlock(Block.Properties.create(Material.ROCK)
-			.hardnessAndResistance(45.0F, 36000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(8)));
+			.hardnessAndResistance(45.0F, 36000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(EnumToolMaterial.BloodDiamondTool.getHarvestLevel()).func_235861_h_()));
 	public static final RegistryObject<OreBlock> vanillarandomore_block = BLOCKS.register("vanillarandomore", () -> new OreBlock(Block.Properties.create(Material.ROCK)
-			.hardnessAndResistance(4.0F, 2000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(10)));
+			.hardnessAndResistance(4.0F, 2000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(EnumToolMaterial.VoidDiamondTool.getHarvestLevel()).func_235861_h_()));
     public static final RegistryObject<OreBlock> modrandomore_block = BLOCKS.register("modrandomore", () -> new OreBlock(Block.Properties.create(Material.ROCK)
-    		.hardnessAndResistance(4.0F, 2000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(10)));
+    		.hardnessAndResistance(4.0F, 2000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(EnumToolMaterial.VoidDiamondTool.getHarvestLevel()).func_235861_h_()));
     //Ore Blocks Items
     public static final RegistryObject<Item> greensapphireore_block_item = ITEMS.register("greensapphireore", () -> new blockItemBase(greensapphireore_block.get()));
     public static final RegistryObject<Item> blooddiamondore_block_item = ITEMS.register("blooddiamondore", () -> new blockItemBase(blooddiamondore_block.get()));
@@ -43,11 +46,11 @@ public class ArcanumBlocks extends IRegistryHandler {
     
     //Ingot Blocks
     public static final RegistryObject<Block> greensapphire_block = BLOCKS.register("greensapphireblock", () -> new Block(Block.Properties.create(Material.IRON)
-    		.hardnessAndResistance(1.0F, 9000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(2).func_235838_a_((p_235469_0_) -> {return 2;})));
+    		.hardnessAndResistance(25.0F, 9000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(ItemTier.DIAMOND.getHarvestLevel()).func_235861_h_().func_235838_a_((p_235469_0_) -> {return 2;})));
     public static final RegistryObject<Block> blooddiamond_block = BLOCKS.register("blooddiamondblock", () -> new Block(Block.Properties.create(Material.IRON)
-    		.hardnessAndResistance(20.0F, 18000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(5)));
+    		.hardnessAndResistance(35.0F, 18000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(EnumToolMaterial.GreenSapphireTool.getHarvestLevel()).func_235861_h_()));
     public static final RegistryObject<Block> voiddiamond_block = BLOCKS.register("voiddiamondblock", () -> new Block(Block.Properties.create(Material.IRON)
-    		.hardnessAndResistance(45.0F, 36000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(8)));
+    		.hardnessAndResistance(45.0F, 36000.0F).harvestTool(ToolType.PICKAXE).harvestLevel(EnumToolMaterial.BloodDiamondTool.getHarvestLevel()).func_235861_h_()));
     //Ingot Block Items
     public static final RegistryObject<Item> greensapphire_block_item = ITEMS.register("greensapphireblock", () -> new blockItemBase(greensapphire_block.get()));
     public static final RegistryObject<Item> blooddiamond_block_item = ITEMS.register("blooddiamondblock", () -> new blockItemBase(blooddiamond_block.get()));
@@ -55,11 +58,11 @@ public class ArcanumBlocks extends IRegistryHandler {
     
     //Mob Drop Ores
     public static final RegistryObject<OreBlock> boneore_block = BLOCKS.register("boneore", () -> new OreBlock(Block.Properties.create(Material.ROCK)
-    		.hardnessAndResistance(1.0F, 15.0F).harvestTool(ToolType.PICKAXE)));
+    		.hardnessAndResistance(1.0F, 15.0F).harvestTool(ToolType.PICKAXE).harvestLevel(ItemTier.WOOD.getHarvestLevel()).func_235861_h_()));
     public static final RegistryObject<OreBlock> fleshore_block = BLOCKS.register("fleshore", () -> new OreBlock(Block.Properties.create(Material.ROCK)
-    		.hardnessAndResistance(1.0F, 15.0F).harvestTool(ToolType.PICKAXE)));
+    		.hardnessAndResistance(1.0F, 15.0F).harvestTool(ToolType.PICKAXE).harvestLevel(ItemTier.WOOD.getHarvestLevel()).func_235861_h_()));
     public static final RegistryObject<OreBlock> sulfurore_block = BLOCKS.register("sulfurore", () -> new OreBlock(Block.Properties.create(Material.ROCK)
-    		.hardnessAndResistance(1.0F, 15.0F).harvestTool(ToolType.PICKAXE)));;
+    		.hardnessAndResistance(1.0F, 15.0F).harvestTool(ToolType.PICKAXE).harvestLevel(ItemTier.WOOD.getHarvestLevel()).func_235861_h_()));;
     //Mob Drop Ore Items
     public static final RegistryObject<Item> boneore_block_item = ITEMS.register("boneore", () -> new blockItemBase(boneore_block.get()));
     public static final RegistryObject<Item> fleshore_block_item = ITEMS.register("fleshore", () -> new blockItemBase(fleshore_block.get()));
@@ -67,11 +70,11 @@ public class ArcanumBlocks extends IRegistryHandler {
     
     //Mob Drop Blocks
     public static final RegistryObject<Block> bone_block = BLOCKS.register("boneblock", () -> new Block(Block.Properties.create(Material.IRON)
-    		.hardnessAndResistance(4.0F, 15.0F).harvestTool(ToolType.PICKAXE)));
+    		.hardnessAndResistance(4.0F, 15.0F).harvestTool(ToolType.PICKAXE).harvestLevel(ItemTier.WOOD.getHarvestLevel()).func_235861_h_()));
     public static final RegistryObject<Block> flesh_block = BLOCKS.register("fleshblock", () -> new Block(Block.Properties.create(Material.IRON)
-    		.hardnessAndResistance(4.0F, 15.0F).harvestTool(ToolType.PICKAXE)));
+    		.hardnessAndResistance(4.0F, 15.0F).harvestTool(ToolType.PICKAXE).harvestLevel(ItemTier.WOOD.getHarvestLevel()).func_235861_h_()));
     public static final RegistryObject<Block> sulfur_block = BLOCKS.register("sulfurblock", () -> new Block(Block.Properties.create(Material.IRON)
-    		.hardnessAndResistance(4.0F, 15.0F).harvestTool(ToolType.PICKAXE)));
+    		.hardnessAndResistance(4.0F, 15.0F).harvestTool(ToolType.PICKAXE).harvestLevel(ItemTier.WOOD.getHarvestLevel()).func_235861_h_()));
     //Mob Drop Block items
     public static final RegistryObject<Item> bone_block_item = ITEMS.register("boneblock", () -> new blockItemBase(bone_block.get()));
     public static final RegistryObject<Item> flesh_block_item = ITEMS.register("fleshblock", () -> new blockItemBase(flesh_block.get()));
@@ -91,6 +94,10 @@ public class ArcanumBlocks extends IRegistryHandler {
     //Misc Block Items
     public static final RegistryObject<Item> greensapphirecoal_block_item = ITEMS.register("greensapphirecoalblock", () -> new blockItemBase(greensapphirecoal_block.get()));
     
+    //Tile Entity
+    //public static final RegistryObject<Block> arcfurnace_block = BLOCKS.register("arcfurnace",  blockArcFurnace::new);
+    //TileEntity Items
+    //public static final RegistryObject<Item> arcfurnace_block_item = ITEMS.register("arcfurnace", () -> new blockItemBase(arcfurnace_block.get()));
     /**
     public static Block blockArcFurnace = new blockArcFurnace();
     public static Block blockMCUFurnace = new blockMCUFurnace();

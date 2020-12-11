@@ -1,25 +1,22 @@
 package com.hellbreecher.arcanum.common;
 
-import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.blocks.tile.TileArcFurnace;
-import com.hellbreecher.arcanum.common.blocks.tile.TileFermenter;
-import com.hellbreecher.arcanum.common.blocks.tile.TileMCUFurnace;
-import com.hellbreecher.arcanum.common.handler.IGuiHandler;
+import com.hellbreecher.arcanum.common.handler.IProxy;
 
-import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.World;
 
-public class CommonProxy {
-    public void registerNetworkRenderers() {
-        NetworkRegistry.INSTANCE.registerGuiHandler(Arcanum.instance, new IGuiHandler());
+public class CommonProxy implements IProxy{
+
+    public void init() {
+    	
     }
 
-    public void registerRenders() {
-    }
+	public World getClientWorld() {
+		throw new IllegalStateException("This should be Client Side only!");
+	}
 
-    public void registerTileEntities() {
-        TileEntity.register("arc_furnace", TileArcFurnace.class);
-        TileEntity.register("mcufurnace", TileMCUFurnace.class);
-        TileEntity.register("fermenter", TileFermenter.class);
-    }
+	public PlayerEntity getClientPlayer() {
+		throw new IllegalStateException("This should be Client Side only!");
+	}
+    
 }

@@ -1,22 +1,8 @@
 package com.hellbreecher.arcanum.common.handler;
 
-import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.blocks.container.containerArcFurnace;
-import com.hellbreecher.arcanum.common.blocks.container.containerFermenter;
-import com.hellbreecher.arcanum.common.blocks.container.containerMCUFurnace;
-import com.hellbreecher.arcanum.common.blocks.tile.TileArcFurnace;
-import com.hellbreecher.arcanum.common.blocks.tile.TileFermenter;
-import com.hellbreecher.arcanum.common.blocks.tile.TileMCUFurnace;
-import com.hellbreecher.arcanum.common.gui.GuiArcFurnace;
-import com.hellbreecher.arcanum.common.gui.GuiFermenter;
-import com.hellbreecher.arcanum.common.gui.GuiMCUFurnace;
-
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
-
-public class IGuiHandler implements net.minecraftforge.fml.common.network.IGuiHandler {
+public class IGuiHandler {
+	
+	/**
     public static final int ArcFurnaceID = 1;
     public static final int MCUFurnaceID = 2;
     public static final int FermenterID = 3;
@@ -57,5 +43,5 @@ public class IGuiHandler implements net.minecraftforge.fml.common.network.IGuiHa
                 return new containerFermenter(player.inventory, tileFermenter);
         }
         return null;
-    }
+    } */
 }

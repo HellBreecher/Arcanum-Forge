@@ -1,12 +1,12 @@
 {
     "variants": {
-        "burning=false,facing=north": { "model": "arcanum:arcfurnace" },
-        "burning=false,facing=east": { "model": "arcanum:arcfurnace", "y": 90 },
-        "burning=false,facing=south": { "model": "arcanum:arcfurnace", "y": 180},
-        "burning=false,facing=west": { "model": "arcanum:arcfurnace", "y": 270},
-        "burning=true,facing=north": { "model": "arcanum:active_arcfurnace" },
-        "burning=true,facing=east": { "model": "arcanum:active_arcfurnace", "y":90},
-        "burning=true,facing=south": { "model": "arcanum:active_arcfurnace", "y":180},
-        "burning=true,facing=west": { "model": "arcanum:active_arcfurnace", "y":270}
+        "lit=false,facing=north": { "model": "arcanum:block/arcfurnace" },
+        "lit=false,facing=east": { "model": "arcanum:block/arcfurnace", "y": 90 },
+        "lit=false,facing=south": { "model": "arcanum:block/arcfurnace", "y": 180},
+        "lit=false,facing=west": { "model": "arcanum:block/arcfurnace", "y": 270},
+        "lit=true,facing=north": { "model": "arcanum:block/active_arcfurnace" },
+        "lit=true,facing=east": { "model": "arcanum:block/active_arcfurnace", "y":90},
+        "lit=true,facing=south": { "model": "arcanum:block/active_arcfurnace", "y":180},
+        "lit=true,facing=west": { "model": "arcanum:block/active_arcfurnace", "y":270}
     }
 }

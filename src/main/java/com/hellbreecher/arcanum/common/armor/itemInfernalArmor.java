@@ -48,7 +48,6 @@ public class itemInfernalArmor extends ArmorItem {
 	@SuppressWarnings("resource")
 	public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
     	PlayerEntity player = (PlayerEntity) entityIn.getEntity();
-		Double playerFOV = Minecraft.getInstance().gameSettings.fov;
     	
     	Iterable<ItemStack> armorlist = entityIn.getArmorInventoryList();
     	//[1 infernalboots, 1 infernalleggings, 1 infernalchestplate, 1 infernalhelmet]
@@ -62,22 +61,26 @@ public class itemInfernalArmor extends ArmorItem {
     	
         if (armorlist.equals(infernalarmor) || armorlist.toString().equals(infernalarmor.toString())) {
             player.abilities.allowFlying = true;
+            player.abilities.setFlySpeed(0.15F);
             player.getFoodStats().setFoodLevel(100);
             player.setHealth(100.0F);
             player.abilities.disableDamage = true;
-            player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 20*20, 10, true, false));
-        	player.addPotionEffect(new EffectInstance(Effects.SPEED, 20*20, 5, true, false));
+            player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 20*20, 15, true, false));
+        	player.addPotionEffect(new EffectInstance(Effects.SPEED, 20*20, 10, true, false));
             if (worldIn.isRemote) {
-                Minecraft.getInstance().gameSettings.fov = playerFOV;
+                Minecraft.getInstance().gameSettings.field_243227_aN = 0.0F;
+                Minecraft.getInstance().gameSettings.field_243226_aM = 0.0F;
             }
         } else {
             player.setInvisible(false);
             player.abilities.allowFlying = false;
+            player.abilities.setFlySpeed(0.1F);
             player.abilities.disableDamage = false;
             player.getFoodStats().setFoodLevel(20);
             player.setHealth(20.0F);
             if (worldIn.isRemote) {
-                Minecraft.getInstance().gameSettings.fov = playerFOV;
+                Minecraft.getInstance().gameSettings.field_243227_aN = 1.0F;
+                Minecraft.getInstance().gameSettings.field_243226_aM = 1.0F;
             }
         }
     }

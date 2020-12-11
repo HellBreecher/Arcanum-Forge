@@ -1,14 +1,8 @@
-package com.hellbreecher.arcanum.common.gui;
+package com.hellbreecher.arcanum.common.screen.inventory;
 
-import com.hellbreecher.arcanum.common.blocks.container.containerMCUFurnace;
-import com.hellbreecher.arcanum.common.blocks.tile.TileMCUFurnace;
-
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.util.ResourceLocation;
-
-public class GuiMCUFurnace extends GuiContainer {
+public class GuiMCUFurnace {
+	
+	/**
     private static final ResourceLocation furnaceGuiTextures = new ResourceLocation(
             "arcanum:textures/gui/mcufurnace.png");
     private final InventoryPlayer inventoryPlayer;
@@ -54,5 +48,5 @@ public class GuiMCUFurnace extends GuiContainer {
         return ticksPerItem != 0 && ticksSmeltItemSoFar != 0
                 ? ticksSmeltItemSoFar * progressIndicatorPixelWidth / ticksPerItem
                 : 0;
-    }
+    } */
 }
