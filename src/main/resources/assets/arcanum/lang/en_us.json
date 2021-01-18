@@ -92,7 +92,9 @@
  
     "block.arcanum.greensapphiretorch": "Green Sapphire Torch",
 
-    "item.arcanum.basicbeatingstick": "Basic Beating Stick",
+    "item.arcanum.sapphirebeatingstick": "Sapphire Beating Stick",
+  	"item.arcanum.blooddiamondbeatingstick": "Blood Diamond Beating Stick",
+    "item.arcanum.voiddiamondbeatingstick": "Void Diamond Beating Stick",
     "item.arcanum.infernalbeatingstick": "Infernal Beating Stick",
 
     "item.MagicHammer": "Magic Hammer",

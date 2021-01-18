@@ -4,9 +4,13 @@ import com.hellbreecher.arcanum.Arcanum;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -20,6 +24,7 @@ public class itemArcWrench extends Item {
     }
 
     public ActionResultType onItemUse(ItemUseContext context) {
+    	/**
         World worldIn = context.getWorld();
         BlockPos pos = new BlockPos(context.getPos());
         Block block = worldIn.getBlockState(pos).getBlock();
@@ -29,7 +34,8 @@ public class itemArcWrench extends Item {
             }
 
             return ActionResultType.SUCCESS;
-        }
+        }*/
         return ActionResultType.FAIL;
     }
+    
 }

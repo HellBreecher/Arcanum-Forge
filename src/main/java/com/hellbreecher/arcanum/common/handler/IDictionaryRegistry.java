@@ -1,9 +1,11 @@
 package com.hellbreecher.arcanum.common.handler;
 
+import net.minecraftforge.common.Tags;
+
 public class IDictionaryRegistry {
 	/**
     public static void blankDictionaryRegistry(String name, Item item) {
-        OreDictionary.registerOre(name, item);
+        Tags.registerOre(name, item);
     }
 
     public static void blockDictionaryRegistry(String name, Block block) {
@@ -35,12 +37,6 @@ public class IDictionaryRegistry {
     }
 
     public static void registerBlocks() {
-        oreDictionaryRegistry("GreenSapphire", ArcanumBlocks.blockGreenSapphireOre);
-        oreDictionaryRegistry("BloodDiamond", ArcanumBlocks.blockBloodDiamondOre);
-        oreDictionaryRegistry("VoidDiamond", ArcanumBlocks.blockVoidDiamondOre);
-        oreDictionaryRegistry("VanillaRandom", ArcanumBlocks.blockVanillaRandomOre);
-        oreDictionaryRegistry("ModRandom", ArcanumBlocks.blockModRandomOre);
-
         blockDictionaryRegistry("GreenSapphire", ArcanumBlocks.blockGreenSapphire);
         blockDictionaryRegistry("BloodDiamond", ArcanumBlocks.blockBloodDiamond);
         blockDictionaryRegistry("VoidDiamond", ArcanumBlocks.blockVoidDiamond);
@@ -56,24 +52,12 @@ public class IDictionaryRegistry {
         materialDictionaryRegistry("Torch", Item.getItemFromBlock(ArcanumBlocks.blockGSTorch));
         blankDictionaryRegistry("Torch", Item.getItemFromBlock(ArcanumBlocks.blockGSTorch));
         blockDictionaryRegistry("Coal", ArcanumBlocks.blockGreenSapphireCoal);
-
-        blockDictionaryRegistry("Furnace", ArcanumBlocks.blockArcFurnace);
-        blockDictionaryRegistry("Furnace", ArcanumBlocks.blockMCUFurnace);
-        blockDictionaryRegistry("Fermenter", ArcanumBlocks.blockFermenter);
     }
 
     public static void registerFood() {
         foodDictionaryRegistry("CrushedApple", ArcanumFood.itemCrushedApple);
         foodDictionaryRegistry("Toast", ArcanumFood.itemToast);
         foodDictionaryRegistry("Bread", ArcanumFood.itemToast);
-
-        foodDictionaryRegistry("Wine", ArcanumFood.itemCortonWine);
-        foodDictionaryRegistry("Beer", ArcanumFood.itemUnfermentedBeer);
-        foodDictionaryRegistry("Beer", ArcanumFood.itemFermentedBeer);
-        foodDictionaryRegistry("AppleCider", ArcanumFood.itemAppleCider);
-        foodDictionaryRegistry("AppleCider", ArcanumFood.itemWarmAppleCider);
-        foodDictionaryRegistry("MountainDew", ArcanumFood.itemMountainDew);
-        foodDictionaryRegistry("Soda", ArcanumFood.itemMountainDew);
     }
 
     public static void registerItem() {
@@ -89,8 +73,6 @@ public class IDictionaryRegistry {
         materialDictionaryRegistry("EmptyCan", ArcanumItems.itemEmptyCan);
         materialDictionaryRegistry("bottle", ArcanumItems.itemEmptyCan);
         materialDictionaryRegistry("Cup", ArcanumItems.itemRedCup);
-
-        gemDictionaryRegistry("InfernalDiamond", ArcanumItems.itemInfernalDiamond);
 
         itemDictionaryRegistry("Coal", ArcanumItems.itemGSCoal);
         itemDictionaryRegistry("Hammer", ArcanumItems.itemHammer);

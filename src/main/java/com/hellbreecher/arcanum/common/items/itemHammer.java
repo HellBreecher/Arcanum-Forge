@@ -10,6 +10,7 @@ public class itemHammer extends Item {
     	super(new Item.Properties()
     			.group(Arcanum.arcanum)
     			.maxStackSize(1)
+    			.maxDamage(25)
     			);
     }
 
@@ -17,9 +18,11 @@ public class itemHammer extends Item {
         return true;
     }
 
+    //TODO:item use durability
     @Override
     public ItemStack getContainerItem(ItemStack stack) {
         ItemStack newStack = stack.copy();
+        newStack.setDamage(stack.getDamage() - 1);
         return newStack;
     }
 

@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:voiddiamondhelmet", "count": 1 },
+    "pattern": [ "XYX", "XZX" ],
+    "key" : {
+        "X": { "item": "arcanum:voiddiamond" },
+        "Y": { "item": "arcanum:blooddiamond" }, 
+        "Z": { "item": "arcanum:blooddiamondhelmet", "data": -1 }     
+    }
+}

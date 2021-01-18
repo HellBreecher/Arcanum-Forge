@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:blooddiamondbeatingstick", "count": 1 },
+    "pattern": [ "XYX", "XYX", "XYX" ],
+    "key" : {
+        "X": { "item": "arcanum:blooddiamond" },
+        "Y": { "item": "arcanum:quartzstick" }        
+    }
+}

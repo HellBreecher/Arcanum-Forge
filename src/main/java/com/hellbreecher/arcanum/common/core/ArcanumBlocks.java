@@ -1,22 +1,32 @@
 package com.hellbreecher.arcanum.common.core;
 
+import java.util.function.Supplier;
+
 import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.blocks.blockArcFurnace;
+import com.hellbreecher.arcanum.client.core.ArcanumParticles;
 import com.hellbreecher.arcanum.common.blocks.blockItemBase;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
+import com.hellbreecher.arcanum.common.items.BucketItemBase;
 import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
 import com.hellbreecher.arcanum.common.lib.Reference;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.TorchBlock;
 import net.minecraft.block.WallTorchBlock;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.settings.ParticleStatus;
+import net.minecraft.fluid.FlowingFluid;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemTier;
+import net.minecraft.item.Items;
 import net.minecraft.item.WallOrFloorItem;
+import net.minecraft.particles.ParticleType;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
@@ -82,9 +92,9 @@ public class ArcanumBlocks extends IRegistryHandler {
     
     //Wall & Floor Blocks
     public static final RegistryObject<TorchBlock> greensapphiretorch_block = BLOCKS.register("greensapphiretorch", () -> new TorchBlock(AbstractBlock.Properties.create(Material.MISCELLANEOUS)
-    		.doesNotBlockMovement().zeroHardnessAndResistance().func_235838_a_((p_235469_0_) -> {return 14;}).sound(SoundType.WOOD), ParticleTypes.FLAME));
+    		.doesNotBlockMovement().zeroHardnessAndResistance().func_235838_a_((p_235469_0_) -> {return 20;}).sound(SoundType.WOOD), ParticleTypes.FLAME));
     public static final RegistryObject<WallTorchBlock> wall_greensapphiretorch_block = BLOCKS.register("wall_greensapphiretorch", () -> new WallTorchBlock(AbstractBlock.Properties.create(Material.MISCELLANEOUS)
-    		.doesNotBlockMovement().zeroHardnessAndResistance().func_235838_a_((p_235469_0_) -> {return 14;}).sound(SoundType.WOOD).lootFrom(greensapphiretorch_block.get()), ParticleTypes.FLAME));
+    		.doesNotBlockMovement().zeroHardnessAndResistance().func_235838_a_((p_235469_0_) -> {return 20;}).sound(SoundType.WOOD).lootFrom(greensapphiretorch_block.get()), ParticleTypes.FLAME));
     //Wall & Floor Block Items
     public static final RegistryObject<WallOrFloorItem> greensapphiretorch_block_item = ITEMS.register("greensapphiretorch", () -> new WallOrFloorItem(greensapphiretorch_block.get(), wall_greensapphiretorch_block.get(), (new Item.Properties().group(Arcanum.arcanum))));
 
@@ -94,13 +104,12 @@ public class ArcanumBlocks extends IRegistryHandler {
     //Misc Block Items
     public static final RegistryObject<Item> greensapphirecoal_block_item = ITEMS.register("greensapphirecoalblock", () -> new blockItemBase(greensapphirecoal_block.get()));
     
+    //FluidBlocks
+   // @SuppressWarnings("deprecation")
+	//public static final RegistryObject<Block> BEER = BLOCKS.register("beer", () -> new FlowingFluidBlock((FlowingFluid) ArcanumFluids.BEER.get(), AbstractBlock.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()));
+    //Fluid Blocks Items
+   // public static final RegistryObject<BucketItem> BEER_BUCKET = ITEMS.register("beer_bucket", () -> new BucketItemBase(ArcanumFluids.BEER, (new Item.Properties()).containerItem(Items.BUCKET).maxStackSize(1).group(Arcanum.arcanum)));
     //Tile Entity
-    //public static final RegistryObject<Block> arcfurnace_block = BLOCKS.register("arcfurnace",  blockArcFurnace::new);
     //TileEntity Items
-    //public static final RegistryObject<Item> arcfurnace_block_item = ITEMS.register("arcfurnace", () -> new blockItemBase(arcfurnace_block.get()));
-    /**
-    public static Block blockArcFurnace = new blockArcFurnace();
-    public static Block blockMCUFurnace = new blockMCUFurnace();
 
-    public static Block blockFermenter = new blockFermenter(); */
 }

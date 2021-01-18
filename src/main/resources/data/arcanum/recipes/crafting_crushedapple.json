@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:crushedapple", "count": 6 },
+    "pattern": [ "X", "Y"],
+    "key" : {
+        "X": { "item": "arcanum:hammer", "Data": -1 },
+        "Y": { "item": "minecraft:apple" }
+    }
+}

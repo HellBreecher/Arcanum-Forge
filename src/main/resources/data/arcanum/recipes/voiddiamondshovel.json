@@ -1,9 +1,0 @@
-{
-    "type": "minecraft:crafting_shaped",
-    "result": { "item": "arcanum:voiddiamondshovel", "count": 1 },
-    "pattern": [ "X", "Y", "Y" ],
-    "key" : {
-        "X": { "item": "arcanum:voiddiamond" },
-        "Y": { "item": "arcanum:blooddiamondstick" }        
-    }
-}

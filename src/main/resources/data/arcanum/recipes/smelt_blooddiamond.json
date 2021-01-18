@@ -1,8 +1,0 @@
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "arcanum:blooddiamondore"
-  },
-  "result": "arcanum:blooddiamond",
-  "experience": 1.0,
-  "cookingtime": 200
-}

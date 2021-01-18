@@ -1,3 +1,26 @@
+###Arcanum 1.16.4 - 6.0.0.0-beta4:
+	*API
+		Update to Forge Loader Version 35.1.37
+	*Data Pack
+		Added Tags for Ores
+	*New Items
+		Blood Diamond Beating Stick
+		Void Diamond Beating Stick
+	*Item Changes
+		Infernal Diamond burn time > infinity
+		Basic Beating stick > Sapphire Beating Stick
+	*Crafting
+		Armor can now be upgraded with damaged armor
+		Tools are all now upgrade recipes
+		New Infernal Beating Stick Recipe
+	**Removals
+		MCU Furnace will not be returning
+		Arc Furnace will not be returning
+###Arcanum 1.16.4 - 6.0.0.0-beta3:
+	*Recipe
+		Fixed ingot ore recipes not working
+	*Data Pack
+		Restructured recipe pack
 ###Arcanum 1.16.4 - 6.0.0.0-beta2:
 	*Recipe
 		Add smelting recipes for; ingot ores, toast, warm apple cider
@@ -15,7 +38,7 @@
 		Blood Diamond Block hardness adjusted to 35.0F
 	*HandHeld
 		Fixed tools/weapons not showing in hand
-		*Currently Still Needing
+	*Currently Still Needing
 		MCU Furnace
 		Arc Furnace
 		Arc Wrench capability

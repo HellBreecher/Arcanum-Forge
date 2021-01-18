@@ -35,9 +35,15 @@ public class itemInfernalDiamond extends Item {
         }
     }
 
+    public ItemStack getContainerItem(ItemStack stack) {
+        ItemStack newStack = stack.copy();
+        return newStack;
+    }
+	
     public int getBurnTime(ItemStack itemStack) {
         if (itemStack.getItem() == ArcanumItems.infernaldiamond.get()) {
-            return 99999999;
+            double time = Double.POSITIVE_INFINITY;
+        	return (int) time;
         }
         return 0;
     }

@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "result": { "item": "arcanum:blooddiamondhelmet", "count": 1 },
+    "pattern": [ "XYX", "XZX" ],
+    "key" : {
+        "X": { "item": "arcanum:blooddiamond" },
+        "Y": { "tag": "forge:gems/quartz" }, 
+        "Z": { "item": "minecraft:diamond_helmet", "data": -1 }     
+    }
+}
++

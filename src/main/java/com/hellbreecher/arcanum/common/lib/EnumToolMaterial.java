@@ -14,8 +14,10 @@ public enum EnumToolMaterial implements IItemTier{
 	InfernalDiamondTool(12, 8000, 100.0F, 100.0F, 30, () -> {return Ingredient.fromItems(ArcanumItems.infernaldiamond.get());}),
 	InfernalTool(9999, 1, 500.0F, 100000F, 30, () -> {return Ingredient.fromItems(ArcanumItems.infernaldiamond.get());}),
 	
-	BasicBeatingStick(0, 1500, 0.0F, 10.0F, 15, () -> {return Ingredient.fromItems(ArcanumItems.greensapphire.get());}),
-	InfernalBeatingStick(0, 3000, 0.0F, 15.0F, 30, () -> {return Ingredient.fromItems(ArcanumItems.infernaldiamond.get());});
+	SapphireBeatingStick(0, 1500, 0.0F, 10.0F, 30, () -> {return Ingredient.fromItems(ArcanumItems.greensapphire.get());}),
+	BloodDiamondBeatingStick(0, 2000, 0.0F, 25.0F, 30, () -> {return Ingredient.fromItems(ArcanumItems.blooddiamond.get());}),
+	VoidDiamondBeatingStick(0, 2500, 0.0F, 50.0F, 30, () -> {return Ingredient.fromItems(ArcanumItems.voiddiamond.get());}),
+	InfernalBeatingStick(0, 3000, 0.0F, 100.0F, 30, () -> {return Ingredient.fromItems(ArcanumItems.infernaldiamond.get());});
 
 
 	private final int harvestLevel;

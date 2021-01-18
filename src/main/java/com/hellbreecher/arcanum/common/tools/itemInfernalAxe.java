@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 public class itemInfernalAxe extends AxeItem {
 
     public itemInfernalAxe() {
-        super(EnumToolMaterial.InfernalTool, 6.0F, -175F, new Item.Properties().group(Arcanum.arcanum).maxDamage(-1));
+        super(EnumToolMaterial.InfernalTool, 6.0F, -175F, new Item.Properties().group(Arcanum.arcanum));
     }
     //TODO: Infernal Axe drop rate increase
 /**
@@ -34,6 +34,7 @@ public class itemInfernalAxe extends AxeItem {
         return false;
     }
 */
+    
 	public void onCreated(ItemStack stack, World worldIn, PlayerEntity playerIn) {
         if (!stack.isEnchanted()) {
             stack.addEnchantment(Enchantments.FORTUNE, 5);
