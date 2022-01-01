@@ -1,0 +1,12 @@
+{
+  "values": [
+    "#forge:ores/greensapphireore",
+    "#forge:ores/blooddiamondore",
+    "#forge:ores/voiddiamondore",
+    "#forge:ores/vanillarandomore",
+    "#forge:ores/modrandomore",
+    "#forge:ores/bonore",
+    "#forge:ores/fleshore",
+    "#forge:ores/sulfurore"
+  ]
+}

@@ -9,8 +9,9 @@ public class ArcanumItemGroup extends ItemGroup{
 		super("Arcanum");
 	}
 
-	public ItemStack createIcon() {
+	public ItemStack makeIcon() {
 		return new ItemStack(ArcanumItems.infernaldiamond.get());
 	}
+
 
 }

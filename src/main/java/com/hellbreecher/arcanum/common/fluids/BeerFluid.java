@@ -19,8 +19,8 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 
-public class BeerFluid extends FlowingFluid{
-
+public class BeerFluid{
+/**
 	public Fluid getFlowingFluid() {
 		return ArcanumFluids.FLOWING_BEER.get();
 	}
@@ -98,5 +98,5 @@ public class BeerFluid extends FlowingFluid{
 			return true;
 		}
 	}
-	
+*/
 }

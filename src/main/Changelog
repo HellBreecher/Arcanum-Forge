@@ -1,3 +1,17 @@
+###Arcanum 1.16.5 - 6.1.0.0:
+	*Data Pack
+		Added ores to basic "forge:ores" tag 
+	*Item Changes
+		Hammer now has 25 durability (previous feature)
+	*Functions Added
+		ArcWrench now rotates blocks
+	*Bug Fixes
+		Infernal Armor disabling flight in creative mode
+		Infernal Armor causing food/health changes when picked up/put into inventory
+		Infernal Diamond tool set not showing up in hand (First Person)
+		Infernal tool set not showing up in hand (First Person)
+		Infernal Armor sometimes causing world to crash on load-in
+		Green Sapphire Torch casts shadow
 ###Arcanum 1.16.4 - 6.0.0.0-beta4:
 	*API
 		Update to Forge Loader Version 35.1.37

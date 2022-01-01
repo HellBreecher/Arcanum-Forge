@@ -1,13 +1,13 @@
 package com.hellbreecher.arcanum.common.core;
 
-import com.hellbreecher.arcanum.common.food.itemAppleCider;
-import com.hellbreecher.arcanum.common.food.itemCortonWine;
-import com.hellbreecher.arcanum.common.food.itemCrushedApple;
-import com.hellbreecher.arcanum.common.food.itemFermentedBeer;
-import com.hellbreecher.arcanum.common.food.itemMountainDew;
-import com.hellbreecher.arcanum.common.food.itemToast;
-import com.hellbreecher.arcanum.common.food.itemUnfermentedBeer;
-import com.hellbreecher.arcanum.common.food.itemWarmAppleCider;
+import com.hellbreecher.arcanum.common.food.AppleCiderItem;
+import com.hellbreecher.arcanum.common.food.CortonWineItem;
+import com.hellbreecher.arcanum.common.food.CrushedAppleItem;
+import com.hellbreecher.arcanum.common.food.FermentedBeerItem;
+import com.hellbreecher.arcanum.common.food.MountainDewItem;
+import com.hellbreecher.arcanum.common.food.ToastItem;
+import com.hellbreecher.arcanum.common.food.UnfermentedBeerItem;
+import com.hellbreecher.arcanum.common.food.WarmAppleCiderItem;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
 import com.hellbreecher.arcanum.common.lib.Reference;
 
@@ -20,18 +20,18 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 public class ArcanumFood extends IRegistryHandler{
 	
 	//Foods
-	public static final RegistryObject<Item> crushedapple = FOODS.register("crushedapple", itemCrushedApple::new);
-	public static final RegistryObject<Item> toast = FOODS.register("toast", itemToast::new);
+	public static final RegistryObject<Item> crushedapple = FOODS.register("crushedapple", CrushedAppleItem::new);
+	public static final RegistryObject<Item> toast = FOODS.register("toast", ToastItem::new);
 
 	//Drinks
-	public static final RegistryObject<Item> cortonwine = FOODS.register("cortonwine", itemCortonWine::new);
-	public static final RegistryObject<Item> unfermentedbeer = FOODS.register("unfermentedbeer", itemUnfermentedBeer::new);
-	public static final RegistryObject<Item> fermentedbeer = FOODS.register("fermentedbeer", itemFermentedBeer::new);
-	public static final RegistryObject<Item> applecider = FOODS.register("applecider", itemAppleCider::new);
-	public static final RegistryObject<Item> warmapplecider = FOODS.register("warmapplecider", itemWarmAppleCider::new);
+	public static final RegistryObject<Item> cortonwine = FOODS.register("cortonwine", CortonWineItem::new);
+	public static final RegistryObject<Item> unfermentedbeer = FOODS.register("unfermentedbeer", UnfermentedBeerItem::new);
+	public static final RegistryObject<Item> fermentedbeer = FOODS.register("fermentedbeer", FermentedBeerItem::new);
+	public static final RegistryObject<Item> applecider = FOODS.register("applecider", AppleCiderItem::new);
+	public static final RegistryObject<Item> warmapplecider = FOODS.register("warmapplecider", WarmAppleCiderItem::new);
     
     //Powder Mix
-	public static final RegistryObject<Item> mountaindew = FOODS.register("mountaindew", itemMountainDew::new);
+	public static final RegistryObject<Item> mountaindew = FOODS.register("mountaindew", MountainDewItem::new);
 	 
 
 }

@@ -5,11 +5,6 @@ bin
 .metadata
 .classpath
 .project
-*.bat
-gradlew
-
-#custom
-settings.gradle
 
 # idea
 out
@@ -20,15 +15,11 @@ out
 
 # gradle
 build
-*.gradle
+.gradle
 
 # other
 eclipse
 run
-run_server
 
 # Files from Forge MDK
 forge*changelog.txt
-forge*README.txt
-
-src/main/generated/
