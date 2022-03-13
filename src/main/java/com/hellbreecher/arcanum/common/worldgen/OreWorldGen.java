@@ -1,69 +1,124 @@
 package com.hellbreecher.arcanum.common.worldgen;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Supplier;
+import java.util.Arrays;
 
-import com.google.common.collect.Lists;
-import com.hellbreecher.arcanum.common.core.ArcanumBlocks;
 import com.hellbreecher.arcanum.common.lib.Reference;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
+import net.minecraft.world.Dimension;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.template.BlockMatchRuleTest;
 import net.minecraft.world.gen.placement.ConfiguredPlacement;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.TopSolidRangeConfig;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class OreWorldGen {
 	
 	public static void generateOres(final BiomeLoadingEvent event) {
-		//Mod Ingot Ores
-		blooddiamondore_feature = Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ArcanumBlocks.blooddiamondore_block.getId(), Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, ArcanumBlocks.blooddiamondore_block.get().getDefaultState(), 4/**vein size*/)).withPlacement(Placement.field_242907_l.configure(new TopSolidRangeConfig(0, 0, 16/**max y*/)).func_242728_a().func_242731_b(2/**veincount*/)));
-		voiddiamondore_feature = Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ArcanumBlocks.voiddiamondore_block.getId(), Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, ArcanumBlocks.voiddiamondore_block.get().getDefaultState(), 4/**vein size*/)).withPlacement(Placement.field_242907_l.configure(new TopSolidRangeConfig(0, 0, 12/**max y*/)).func_242728_a().func_242731_b(1/**veincount*/)));
-		
-		//Random Ores
-		vanillarandomore_feature = Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ArcanumBlocks.vanillarandomore_block.getId(), Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, ArcanumBlocks.vanillarandomore_block.get().getDefaultState(), 8/**vein size*/)).withPlacement(Placement.field_242907_l.configure(new TopSolidRangeConfig(0, 0, 256/**max y*/)).func_242728_a().func_242731_b(4/**veincount*/)));
-		modrandomore_feature = Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ArcanumBlocks.modrandomore_block.getId(), Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, ArcanumBlocks.modrandomore_block.get().getDefaultState(), 8/**vein size*/)).withPlacement(Placement.field_242907_l.configure(new TopSolidRangeConfig(0, 0, 256/**max y*/)).func_242728_a().func_242731_b(2/**veincount*/)));
-		
-		//Mob Drop Ores
-		boneore_feature = Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ArcanumBlocks.boneore_block.getId(), Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, ArcanumBlocks.boneore_block.get().getDefaultState(), 8/**vein size*/)).withPlacement(Placement.field_242907_l.configure(new TopSolidRangeConfig(0, 0, 256/**max y*/)).func_242728_a().func_242731_b(4/**veincount*/)));
-		fleshore_feature = Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ArcanumBlocks.fleshore_block.getId(), Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, ArcanumBlocks.fleshore_block.get().getDefaultState(), 8/**vein size*/)).withPlacement(Placement.field_242907_l.configure(new TopSolidRangeConfig(0, 0, 256/**max y*/)).func_242728_a().func_242731_b(4/**veincount*/)));
-		sulfurore_feature = Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ArcanumBlocks.sulfurore_block.getId(), Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, ArcanumBlocks.sulfurore_block.get().getDefaultState(), 8/**vein size*/)).withPlacement(Placement.field_242907_l.configure(new TopSolidRangeConfig(0, 0, 256/**max y*/)).func_242728_a().func_242731_b(4/**veincount*/)));
+		spawnOreInAllBiomes(OreType.GreenSapphireOre, event, Dimension.OVERWORLD.toString());
+		spawnOreInAllBiomes(OreType.BloodDiamondOre, event, Dimension.OVERWORLD.toString());
+		spawnOreInAllBiomes(OreType.VoidDiamondOre, event, Dimension.OVERWORLD.toString());
 
-		for(OreType ore : OreType.values()) {
-			OreFeatureConfig oreFeatureConfig = new OreFeatureConfig(
-					OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-					ore.getBlock().get().defaultBlockState(), ore.getMaxVeinSize());
-			
-			// bottom Offset (min height)
-			// maximum (minHeight + max = top level, vertical height expansion)
-			// topOffset (subtract from max to get actual top)
-			// ore exists from bottom offset to (bottom offset + max - top offset)
-			ConfiguredPlacement<TopSolidRangeConfig> configuredPlacement = Placement.RANGE.configured(
-					new TopSolidRangeConfig(ore.getMinHeight(), ore.getMinHeight(), ore.getMaxHeight()));
-			
-			ConfiguredFeature<?, ?> oreFeature = registerOreFeature(ore, oreFeatureConfig, configuredPlacement);
-			
-			event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, oreFeature);
-					
-		}
+		spawnOreInAllBiomes(OreType.VanillaRandOre, event, Dimension.OVERWORLD.toString());
+		spawnOreInAllBiomes(OreType.ModRandomOre, event, Dimension.OVERWORLD.toString());
 		
+		spawnOreInAllBiomes(OreType.FleshOre, event, Dimension.OVERWORLD.toString());
+		spawnOreInAllBiomes(OreType.SulfureOre, event, Dimension.OVERWORLD.toString());
+		spawnOreInAllBiomes(OreType.BoneOre, event, Dimension.OVERWORLD.toString());
+
+
 	}
 	
-	private static ConfiguredFeature<?, ?> registerOreFeature(OreType ore, OreFeatureConfig oreFeatureConfig, ConfiguredPlacement configuredPlacement) {
-		return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ore.getBlock().get().getRegistryName(), Feature.ORE.configured(oreFeatureConfig).place(ISeedReader reader, null, null, null));
+	private static OreFeatureConfig getOverworldFeatureConfig(OreType ore) { 
+		return new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+				ore.getBlock().get().defaultBlockState(), ore.getMaxVeinSize());
+	}
+	
+	private static OreFeatureConfig getNetherFeatureConfig(OreType ore) { 
+		return new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
+				ore.getBlock().get().defaultBlockState(), ore.getMaxVeinSize());
+	}
+	
+	private static OreFeatureConfig getEndFeatureConfig(OreType ore) { 
+		return new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE),
+				ore.getBlock().get().defaultBlockState(), ore.getMaxVeinSize());
+	}
+	
+	//vanilla dimension
+	private static ConfiguredFeature<?, ?> makeOreFeature(OreType ore, String dimensionToSpawnIn) {
+		OreFeatureConfig oreFeatureConfig = null;
+		
+		if(dimensionToSpawnIn.equals(Dimension.OVERWORLD.toString())) {
+			oreFeatureConfig = getOverworldFeatureConfig(ore);
+		}else if(dimensionToSpawnIn.equals(Dimension.NETHER.toString())) {
+			oreFeatureConfig = getNetherFeatureConfig(ore);
+		}else if(dimensionToSpawnIn.equals(Dimension.END.toString())) {
+			oreFeatureConfig = getEndFeatureConfig(ore);
+		}
+		
+		ConfiguredPlacement<TopSolidRangeConfig> configuredPlacement = Placement.RANGE.configured(
+				new TopSolidRangeConfig(ore.getMinHeight(), ore.getMinHeight(), ore.getMaxHeight()));
+		
+		return registerOreFeature(ore, oreFeatureConfig, configuredPlacement);
 	}
 
+
+    private static void spawnOreInOverworldInGivenBiomes(OreType ore, final BiomeLoadingEvent event, Biome... biomesToSpawnIn) {
+        OreFeatureConfig oreFeatureConfig = new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+                ore.getBlock().get().defaultBlockState(), ore.getMaxVeinSize());
+
+        ConfiguredPlacement<TopSolidRangeConfig> configuredPlacement = Placement.RANGE.configured(
+				new TopSolidRangeConfig(ore.getMinHeight(), ore.getMinHeight(), ore.getMaxHeight()));
+
+        ConfiguredFeature<?, ?> oreFeature = registerOreFeature(ore, oreFeatureConfig, configuredPlacement);
+
+        if (Arrays.stream(biomesToSpawnIn).anyMatch(b -> b.getRegistryName().equals(event.getName()))) {
+            event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, oreFeature);
+        }
+    }
+
+    private static void spawnOreInOverworldInAllBiomes(OreType ore, final BiomeLoadingEvent event) {
+        OreFeatureConfig oreFeatureConfig = new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+                ore.getBlock().get().defaultBlockState(), ore.getMaxVeinSize());
+
+        ConfiguredPlacement<TopSolidRangeConfig> configuredPlacement = Placement.RANGE.configured(
+				new TopSolidRangeConfig(ore.getMinHeight(), ore.getMinHeight(), ore.getMaxHeight()));
+
+        ConfiguredFeature<?, ?> oreFeature = registerOreFeature(ore, oreFeatureConfig, configuredPlacement);
+
+        event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, oreFeature);
+    }
+
+    private static void spawnOreInSpecificModBiome(Biome biomeToSpawnIn, OreType currentOreType, final BiomeLoadingEvent event, String dimension) {
+        if(event.getName().toString().contains(biomeToSpawnIn.getRegistryName().toString())) {
+            event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, makeOreFeature(currentOreType, dimension));
+        }
+    }
+
+    private static void spawnOreInSpecificBiome(RegistryKey<Biome> biomeToSpawnIn, OreType currentOreType, final BiomeLoadingEvent event, String dimension) {
+        if(event.getName().toString().contains(biomeToSpawnIn.getRegistryName().toString())) {
+            event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, makeOreFeature(currentOreType, dimension));
+        }
+    }
+
+    private static void spawnOreInAllBiomes(OreType currentOreType, final BiomeLoadingEvent event, String dimension) {
+        event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
+                makeOreFeature(currentOreType, dimension));
+    }
+
+    private static ConfiguredFeature<?, ?> registerOreFeature(OreType ore, OreFeatureConfig oreFeatureConfig, ConfiguredPlacement configuredPlacement) {
+        return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, ore.getBlock().get().getRegistryName(),
+                Feature.ORE.configured(oreFeatureConfig).decorated(configuredPlacement)
+                        .squared().count(ore.getVeinsPerChunk()));
+    }
 }

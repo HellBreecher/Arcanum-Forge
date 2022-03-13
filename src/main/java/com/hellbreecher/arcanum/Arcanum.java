@@ -4,14 +4,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.hellbreecher.arcanum.client.ClientSetup;
-import com.hellbreecher.arcanum.client.handler.IClientRegistryHandler;
 import com.hellbreecher.arcanum.common.core.ArcanumItemGroup;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
 import com.hellbreecher.arcanum.common.lib.Reference;
-import com.hellbreecher.arcanum.common.worldgen.OreWorldGen;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.VersionChecker;
 import net.minecraftforge.fml.common.Mod;
@@ -46,9 +45,7 @@ public class Arcanum {
     	Logger.info("Arcanum: Common Initialization Started");
 
     	VersionChecker.startVersionCheck();
-    	
-        OreWorldGen.init();
-        OreWorldGen.setupGeneralWorldGen();
+
     }
     
     //client setup
@@ -57,6 +54,7 @@ public class Arcanum {
     	
     	ClientSetup.setup();    	
     }
+	
     
     /**
     private void clientRegistries(final FMLClientSetupEvent event) {  
