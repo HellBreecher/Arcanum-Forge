@@ -25,6 +25,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 @Mod.EventBusSubscriber(modid = Reference.MODID, bus = EventBusSubscriber.Bus.FORGE)
 public class InfernalDiamondArmorItem extends ArmorItem {
 
+	static boolean arceffect;
+	
     public InfernalDiamondArmorItem(EquipmentSlotType slot) {
         super(EnumArmorMaterial.InfernalDiamondArmor, slot, new Item.Properties().tab(Arcanum.arcanum));
     }
@@ -38,21 +40,31 @@ public class InfernalDiamondArmorItem extends ArmorItem {
     
 	@SubscribeEvent
 	public static void onArmorEquipped(LivingEquipmentChangeEvent event) {
-    	PlayerEntity player = (PlayerEntity) event.getEntity();
-    	
-    	Iterable<ItemStack> armorlist = player.getArmorSlots();
-    	//[1 infernaldiamondboots, 1 infernaldiamondleggings, 1 infernaldiamondchestplate, 1 infernaldiamondhelmet]
-    	
-    	List<ItemStack> infernaldiamondarmor = new ArrayList<ItemStack>();
-    	infernaldiamondarmor.add(new ItemStack(ArcanumArmor.infernaldiamondboots.get()));
-    	infernaldiamondarmor.add(new ItemStack(ArcanumArmor.infernaldiamondleggings.get()));
-    	infernaldiamondarmor.add(new ItemStack(ArcanumArmor.infernaldiamondchestplate.get()));
-    	infernaldiamondarmor.add(new ItemStack(ArcanumArmor.infernaldiamondhelmet.get()));        
-        //[1 infernaldiamondboots, 1 infernaldiamondleggings, 1 infernaldiamondchestplate, 1 infernaldiamondhelmet]
-    	
-        if (armorlist.equals(infernaldiamondarmor) || armorlist.toString().equals(infernaldiamondarmor.toString())) {
-        	player.addEffect(new EffectInstance(Effects.FIRE_RESISTANCE, 20*20, 1, true, false));
-        	player.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 20*20, 1, true, false));
-       }
+		
+		
+		if(event.getEntity() instanceof PlayerEntity) {
+	        PlayerEntity player = (PlayerEntity) event.getEntity();
+
+			int inf = Integer.MAX_VALUE;
+	    	Iterable<ItemStack> armorlist = player.getArmorSlots();
+	    	//[1 infernaldiamondboots, 1 infernaldiamondleggings, 1 infernaldiamondchestplate, 1 infernaldiamondhelmet]
+	    	
+	    	List<ItemStack> infernaldiamondarmor = new ArrayList<ItemStack>();
+	    	infernaldiamondarmor.add(new ItemStack(ArcanumArmor.infernaldiamondboots.get()));
+	    	infernaldiamondarmor.add(new ItemStack(ArcanumArmor.infernaldiamondleggings.get()));
+	    	infernaldiamondarmor.add(new ItemStack(ArcanumArmor.infernaldiamondchestplate.get()));
+	    	infernaldiamondarmor.add(new ItemStack(ArcanumArmor.infernaldiamondhelmet.get()));        
+	        //[1 infernaldiamondboots, 1 infernaldiamondleggings, 1 infernaldiamondchestplate, 1 infernaldiamondhelmet]
+	    	
+	        if (armorlist.equals(infernaldiamondarmor) || armorlist.toString().equals(infernaldiamondarmor.toString())) {
+	        	player.addEffect(new EffectInstance(Effects.FIRE_RESISTANCE, inf, 1, true, false));
+	        	player.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, inf, 1, true, false));
+	        	arceffect = true;
+	        }else if(arceffect) {
+				player.removeEffect(Effects.FIRE_RESISTANCE);
+				player.removeEffect(Effects.MOVEMENT_SPEED);
+				arceffect = false;
+	        }
+		}
     }
 }

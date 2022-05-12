@@ -26,7 +26,9 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 @Mod.EventBusSubscriber(modid = Reference.MODID, bus = EventBusSubscriber.Bus.FORGE)
 public class InfernalArmorItem extends ArmorItem {
 
-    public InfernalArmorItem(EquipmentSlotType slot) {
+	static boolean arceffect;
+
+	public InfernalArmorItem(EquipmentSlotType slot) {
         super(EnumArmorMaterial.InfernalArmor, slot, new Item.Properties().tab(Arcanum.arcanum).durability(-1));
     }
 
@@ -52,39 +54,49 @@ public class InfernalArmorItem extends ArmorItem {
 	
 	@SubscribeEvent
 	public static void onEquipped(LivingEquipmentChangeEvent event) {
-    	PlayerEntity player = (PlayerEntity) event.getEntity();
-    	Iterable<ItemStack> armorlist = player.getArmorSlots();
-    	//[1 infernalboots, 1 infernalleggings, 1 infernalchestplate, 1 infernalhelmet]
-        Minecraft instance = Minecraft.getInstance();
-        World worldIn =  player.level;
 
-    	List<ItemStack> infernalarmor = new ArrayList<ItemStack>();
-    	infernalarmor.add(new ItemStack(ArcanumArmor.infernalboots.get()));
-    	infernalarmor.add(new ItemStack(ArcanumArmor.infernalleggings.get()));
-    	infernalarmor.add(new ItemStack(ArcanumArmor.infernalchestplate.get()));
-    	infernalarmor.add(new ItemStack(ArcanumArmor.infernalhelmet.get()));        
-        //[1 infernalboots, 1 infernalleggings, 1 infernalchestplate, 1 infernalhelmet]
-    	
-		if (armorlist.equals(infernalarmor) || armorlist.toString().equals(infernalarmor.toString())) {
-            player.abilities.flying = true;
-            player.abilities.setFlyingSpeed(0.15F);
-            player.getFoodData().setFoodLevel(20);
-            player.setHealth(player.getMaxHealth());
-            player.abilities.invulnerable = true;
-            player.addEffect(new EffectInstance(Effects.JUMP, 20*20, 15, true, false));
-        	player.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 20*20, 10, true, false));
-            if (worldIn.isClientSide) {
-                instance.options.fovEffectScale = 0.0F;
-                instance.options.screenEffectScale = 0.0F;
+		if(event.getEntity() instanceof PlayerEntity) {
+            Minecraft instance = Minecraft.getInstance();
+            PlayerEntity player = (PlayerEntity) event.getEntity();
+        	Iterable<ItemStack> armorlist = player.getArmorSlots();
+        	//[1 infernalboots, 1 infernalleggings, 1 infernalchestplate, 1 infernalhelmet]
+            World worldIn =  player.level;
+            int inf = Integer.MAX_VALUE;
+            
+        	List<ItemStack> infernalarmor = new ArrayList<ItemStack>();
+        	infernalarmor.add(new ItemStack(ArcanumArmor.infernalboots.get()));
+        	infernalarmor.add(new ItemStack(ArcanumArmor.infernalleggings.get()));
+        	infernalarmor.add(new ItemStack(ArcanumArmor.infernalchestplate.get()));
+        	infernalarmor.add(new ItemStack(ArcanumArmor.infernalhelmet.get()));        
+            //[1 infernalboots, 1 infernalleggings, 1 infernalchestplate, 1 infernalhelmet]
+        	
+			if (armorlist.equals(infernalarmor) || armorlist.toString().equals(infernalarmor.toString())) {
+                player.abilities.flying = true;
+                player.abilities.setFlyingSpeed(0.15F);
+                player.getFoodData().setFoodLevel(20);
+                player.setHealth(player.getMaxHealth());
+                player.abilities.invulnerable = true;
+                player.addEffect(new EffectInstance(Effects.JUMP, inf, 15, true, false));
+            	player.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, inf, 10, true, false));
+                if (worldIn.isClientSide) {
+                    instance.options.fovEffectScale = 0.0F;
+                    instance.options.screenEffectScale = 0.0F;
+                }
+                arceffect = true;
+            } else if(arceffect) {
+                if (!player.isCreative()) player.abilities.flying = false;
+                player.abilities.setFlyingSpeed(0.1F);
+                player.removeEffect(Effects.JUMP);
+                player.removeEffect(Effects.MOVEMENT_SPEED);
+                player.abilities.invulnerable = false;
+                if (worldIn.isClientSide) {
+                    instance.options.fovEffectScale = 1.0F;
+                    instance.options.screenEffectScale = 1.0F;
+                }
+                arceffect = false;
             }
-        } else {
-            if (!player.isCreative()) player.abilities.flying = false;
-            player.abilities.setFlyingSpeed(0.1F);
-            player.abilities.invulnerable = false;
-            if (worldIn.isClientSide) {
-                instance.options.fovEffectScale = 1.0F;
-                instance.options.screenEffectScale = 1.0F;
-            }
-        }		
+        }
+
+		
 	}
 }

@@ -1,4 +1,6 @@
 ###Arcanum 1.16.5 - 6.1.0.0:
+	*API
+		update forge to 1.16.5 - 36.2.35
 	*Data Pack
 		Added ores to basic "forge:ores" tag 
 	*Item Changes
