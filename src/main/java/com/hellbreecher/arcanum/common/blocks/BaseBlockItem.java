@@ -1,12 +1,15 @@
 package com.hellbreecher.arcanum.common.blocks;
 
-import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.core.ArcanumBlocks;
+import org.jetbrains.annotations.Nullable;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import com.hellbreecher.arcanum.Arcanum;
+import com.hellbreecher.arcanum.core.ArcanumBlocks;
+
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.block.Block;
 
 public class BaseBlockItem extends BlockItem {
 
@@ -14,7 +17,7 @@ public class BaseBlockItem extends BlockItem {
 		super(blockIn, new Item.Properties().tab(Arcanum.arcanum));
 	}
 
-    public int getBurnTime(ItemStack itemStack) {
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
         if (itemStack.getItem() == ArcanumBlocks.greensapphirecoal_block_item.get()) {
             return 57600;
         }

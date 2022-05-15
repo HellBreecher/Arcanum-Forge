@@ -1,9 +1,9 @@
 package com.hellbreecher.arcanum.common.worldgen;
 
-import com.hellbreecher.arcanum.common.core.ArcanumBlocks;
+import com.hellbreecher.arcanum.core.ArcanumBlocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.OreBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.OreBlock;
 import net.minecraftforge.common.util.Lazy;
 
 public enum OreType {

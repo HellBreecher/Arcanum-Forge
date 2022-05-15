@@ -4,11 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.hellbreecher.arcanum.client.ClientSetup;
-import com.hellbreecher.arcanum.common.core.ArcanumItemGroup;
+import com.hellbreecher.arcanum.core.ArcanumItemGroup;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
 import com.hellbreecher.arcanum.common.lib.Reference;
 
-import net.minecraft.item.ItemGroup;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.VersionChecker;
@@ -24,11 +24,11 @@ public class Arcanum {
 
     public static Arcanum instance;
 
-    public static final ItemGroup arcanum = new ArcanumItemGroup();
+    public static final ArcanumItemGroup arcanum = new ArcanumItemGroup();
     
     public Arcanum() {
         IEventBus event = FMLJavaModLoadingContext.get().getModEventBus();
-    	MinecraftForge.EVENT_BUS.register(this);
+    	MinecraftForge.EVENT_BUS.register(this);	
     	instance = this;
     	
     	//register methods for mod loading    	

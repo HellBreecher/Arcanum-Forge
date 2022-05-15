@@ -13,7 +13,7 @@ public class WorldEvents {
 	@SubscribeEvent
 	public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
 		
-		OreWorldGen.generateOres(event);
+		ArcanumOreGen.generateOres(event);
 		
 		Arcanum.Logger.info("Arcanum: Biome Events Loaded");
 	}

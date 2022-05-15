@@ -2,15 +2,15 @@ package com.hellbreecher.arcanum.common.lib;
 
 import java.util.function.Supplier;
 
-import com.hellbreecher.arcanum.common.core.ArcanumItems;
+import com.hellbreecher.arcanum.core.ArcanumItems;
 
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
 
-public enum EnumArmorMaterial implements IArmorMaterial {
+public enum EnumArmorMaterial implements ArmorMaterial {
 	
 	GreenSapphireArmor("arcanum:greensapphirearmor", 66, new int[] { 4, 8, 5, 5 }, 30, SoundEvents.ARMOR_EQUIP_GENERIC, 20.0F, 0.0F, () -> {return Ingredient.of(ArcanumItems.greensapphire.get());}),
 	BloodDiamondArmor("arcanum:blooddiamondarmor", 99, new int[] { 6, 10, 8, 8 }, 30, SoundEvents.ARMOR_EQUIP_GENERIC, 40.0F, 0.3F, () -> {return Ingredient.of(ArcanumItems.blooddiamond.get());}),
@@ -39,11 +39,11 @@ public enum EnumArmorMaterial implements IArmorMaterial {
 		this.repairMaterial = repairMaterial;
 	}
 	
-	public int getDurabilityForSlot(EquipmentSlotType slotIn) {
+	public int getDurabilityForSlot(EquipmentSlot slotIn) {
 		return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
 	}
 
-	public int getDefenseForSlot(EquipmentSlotType slotIn) {
+	public int getDefenseForSlot(EquipmentSlot slotIn) {
 		return this.damageReductionAmountArray[slotIn.getIndex()];
 	}
 

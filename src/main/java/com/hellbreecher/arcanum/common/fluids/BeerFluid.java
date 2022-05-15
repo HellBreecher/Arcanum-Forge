@@ -1,24 +1,5 @@
 package com.hellbreecher.arcanum.common.fluids;
 
-import com.hellbreecher.arcanum.common.core.ArcanumBlocks;
-import com.hellbreecher.arcanum.common.core.ArcanumFluids;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FlowingFluidBlock;
-import net.minecraft.fluid.FlowingFluid;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.item.Item;
-import net.minecraft.state.StateContainer;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.IWorldReader;
-
 public class BeerFluid{
 /**
 	public Fluid getFlowingFluid() {

@@ -2,15 +2,15 @@ package com.hellbreecher.arcanum.common.tools;
 
 import com.hellbreecher.arcanum.Arcanum;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Rotation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorld;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class ArcWrenchItem extends Item {
 	
@@ -18,16 +18,16 @@ public class ArcWrenchItem extends Item {
         super(new Item.Properties().tab(Arcanum.arcanum).stacksTo(1));
     }
 
-    public ActionResultType useOn(ItemUseContext context) {
+    public InteractionResult useOn(UseOnContext context) {
         BlockState block = context.getLevel().getBlockState(context.getClickedPos());
-        PlayerEntity player = context.getPlayer();
-        IWorld world = context.getLevel();
+        Player player = context.getPlayer();
+        LevelAccessor level = context.getLevel();
         BlockPos pos = context.getClickedPos();
-        BlockState newBlock = block.rotate(context.getLevel(), context.getClickedPos(), Rotation.CLOCKWISE_90);
-        Block.updateOrDestroy(block, newBlock, world, pos, getEnchantmentValue());;
+        BlockState newBlock = block.rotate(level, context.getClickedPos(), Rotation.CLOCKWISE_90);
+        Block.updateOrDestroy(block, newBlock, context.getLevel(), pos, getEnchantmentValue());;
         player.swing(context.getHand());
-        if (block == newBlock) return ActionResultType.SUCCESS;
-        else return ActionResultType.FAIL;
+        if (block == newBlock) return InteractionResult.SUCCESS;
+        else return InteractionResult.FAIL;
     }
     
 }

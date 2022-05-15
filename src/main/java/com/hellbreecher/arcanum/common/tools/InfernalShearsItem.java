@@ -2,12 +2,12 @@ package com.hellbreecher.arcanum.common.tools;
 
 import com.hellbreecher.arcanum.Arcanum;
 
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ShearsItem;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShearsItem;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.Level;
 
 public class InfernalShearsItem extends ShearsItem {
 
@@ -31,7 +31,7 @@ public class InfernalShearsItem extends ShearsItem {
     }
 	*/
     
-	public void onCraftedBy(ItemStack stack, World worldIn, PlayerEntity playerIn) {
+	public void onCraftedBy(ItemStack stack, Level level, Player player) {
         if (!stack.isEnchanted()) {
             stack.enchant(Enchantments.BLOCK_FORTUNE, 5);
             stack.enchant(Enchantments.UNBREAKING, 10);

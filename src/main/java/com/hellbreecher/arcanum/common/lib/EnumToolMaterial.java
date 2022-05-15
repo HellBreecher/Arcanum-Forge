@@ -2,11 +2,12 @@ package com.hellbreecher.arcanum.common.lib;
 
 import java.util.function.Supplier;
 
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.crafting.Ingredient;
-import com.hellbreecher.arcanum.common.core.ArcanumItems;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
 
-public enum EnumToolMaterial implements IItemTier{
+import com.hellbreecher.arcanum.core.ArcanumItems;
+
+public enum EnumToolMaterial implements Tier{
 	
 	GreenSapphireTool(5, 1500, 10.0F, 10.0F, 30, () -> {return Ingredient.of(ArcanumItems.greensapphire.get());}),
 	BloodDiamondTool(8, 3000, 20.0F, 50.0F, 30, () -> {return Ingredient.of(ArcanumItems.blooddiamond.get());}),

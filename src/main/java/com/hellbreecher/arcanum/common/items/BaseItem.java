@@ -1,10 +1,13 @@
 package com.hellbreecher.arcanum.common.items;
 
-import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.core.ArcanumItems;
+import org.jetbrains.annotations.Nullable;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import com.hellbreecher.arcanum.Arcanum;
+import com.hellbreecher.arcanum.core.ArcanumItems;
+
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
 
 public class BaseItem extends Item{
 
@@ -15,7 +18,7 @@ public class BaseItem extends Item{
 				);
 	}
 
-    public int getBurnTime(ItemStack itemStack) {
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
         if (itemStack.getItem() == ArcanumItems.greensapphirecoal.get()) {
             return 6400;
         }

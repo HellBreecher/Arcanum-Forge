@@ -3,11 +3,9 @@ package com.hellbreecher.arcanum.common.handler;
 import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.lib.Reference;
 
-import net.minecraft.block.Block;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,9 +22,9 @@ public class IRegistryHandler {
 	
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, Reference.MODID);
 	
-	public static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, Reference.MODID);
+	//public static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, Reference.MODID);
 	
-	public static final DeferredRegister<TileEntityType<?>> TILEENTITY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Reference.MODID);
+	//public static final DeferredRegister<TileEntityType<?>> TILEENTITY = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, Reference.MODID);
 
 	public static void registryInit() {
 		ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -46,10 +44,10 @@ public class IRegistryHandler {
 		FLUIDS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		Arcanum.Logger.info("Arcanum: Fluids Registered");
 		
-		CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
-		Arcanum.Logger.info("Arcanum: Containers Registered");
+		//CONTAINERS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		//Arcanum.Logger.info("Arcanum: Containers Registered");
 		
-		TILEENTITY.register(FMLJavaModLoadingContext.get().getModEventBus());
-		Arcanum.Logger.info("Arcanum: TileEntities Registered");
+		//TILEENTITY.register(FMLJavaModLoadingContext.get().getModEventBus());
+		//Arcanum.Logger.info("Arcanum: TileEntities Registered");
 	}
 }

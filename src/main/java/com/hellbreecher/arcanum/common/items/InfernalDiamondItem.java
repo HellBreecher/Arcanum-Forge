@@ -1,24 +1,31 @@
 package com.hellbreecher.arcanum.common.items;
 
+import org.jetbrains.annotations.Nullable;
+
 import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.core.ArcanumItems;
+import com.hellbreecher.arcanum.core.ArcanumItems;
 
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.block.AbstractFireBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CampfireBlock;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseFireBlock;
+import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.CandleBlock;
+import net.minecraft.world.level.block.CandleCakeBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 public class InfernalDiamondItem extends Item {
     
@@ -26,10 +33,11 @@ public class InfernalDiamondItem extends Item {
     	super(new Item.Properties()
     			.tab(Arcanum.arcanum)
     			.stacksTo(1)
+    			.fireResistant()
     			);    	
     }
 
-	public void onCraftedBy(ItemStack stack, World worldIn, PlayerEntity playerIn) {
+	public void onCraftedBy(ItemStack stack, Level level, Player player) {
         if (!stack.isEnchanted()) {
             stack.enchant(Enchantments.FIRE_ASPECT, 5);
         }
@@ -40,7 +48,7 @@ public class InfernalDiamondItem extends Item {
         return newStack;
     }
 	
-    public int getBurnTime(ItemStack itemStack) {
+    public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
         if (itemStack.getItem() == ArcanumItems.infernaldiamond.get()) {
             double time = Double.POSITIVE_INFINITY;
         	return (int) time;
@@ -48,30 +56,41 @@ public class InfernalDiamondItem extends Item {
         return 0;
     }
     
-    public ActionResultType onItemUse(ItemUseContext context) {
-        PlayerEntity playerentity = context.getPlayer();
-        World world = context.getLevel();
+    public InteractionResult useOn(UseOnContext context) {
+        Player player = context.getPlayer();
+        Level level = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
-        BlockState blockstate = world.getBlockState(blockpos);
-        if (!CampfireBlock.isLitCampfire(blockstate)) {
-           world.playSound(playerentity, blockpos, SoundEvents.FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, random.nextFloat() * 0.4F + 0.8F);
-           world.setBlock(blockpos, blockstate.setValue(BlockStateProperties.LIT, Boolean.valueOf(true)), 11);
-           return ActionResultType.sidedSuccess(world.isClientSide);
-        } else {
+        BlockState blockstate = level.getBlockState(blockpos);
+        if (!CampfireBlock.canLight(blockstate) && !CandleBlock.canLight(blockstate) && !CandleCakeBlock.canLight(blockstate)) {
            BlockPos blockpos1 = blockpos.relative(context.getClickedFace());
-           if (AbstractFireBlock.canBePlacedAt(world, blockpos1, context.getHorizontalDirection())) {
-              world.playSound(playerentity, blockpos1, SoundEvents.FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, random.nextFloat() * 0.4F + 0.8F);
-              BlockState blockstate1 = AbstractFireBlock.getState(world, blockpos1);
-              world.setBlock(blockpos1, blockstate1, 11);
+           if (BaseFireBlock.canBePlacedAt(level, blockpos1, context.getHorizontalDirection())) {
+              level.playSound(player, blockpos1, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
+              BlockState blockstate1 = BaseFireBlock.getState(level, blockpos1);
+              level.setBlock(blockpos1, blockstate1, 11);
+              level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);
               ItemStack itemstack = context.getItemInHand();
-              if (playerentity instanceof ServerPlayerEntity) {
-                 CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayerEntity)playerentity, blockpos1, itemstack);
+              if (player instanceof ServerPlayer) {
+                 CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayer)player, blockpos1, itemstack);
+                 itemstack.hurtAndBreak(1, player, (p_41300_) -> {
+                    p_41300_.broadcastBreakEvent(context.getHand());
+                 });
               }
 
-              return ActionResultType.sidedSuccess(world.isClientSide);
+              return InteractionResult.sidedSuccess(level.isClientSide());
            } else {
-              return ActionResultType.FAIL;
+              return InteractionResult.FAIL;
            }
+        } else {
+           level.playSound(player, blockpos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
+           level.setBlock(blockpos, blockstate.setValue(BlockStateProperties.LIT, Boolean.valueOf(true)), 11);
+           level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos);
+           if (player != null) {
+        	   context.getItemInHand().hurtAndBreak(1, player, (p_41303_) -> {
+                 p_41303_.broadcastBreakEvent(context.getHand());
+              });
+           }
+
+           return InteractionResult.sidedSuccess(level.isClientSide());
         }
      }
 }

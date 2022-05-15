@@ -2,15 +2,15 @@ package com.hellbreecher.arcanum.common.food;
 
 import com.hellbreecher.arcanum.Arcanum;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.Food;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.UseAction;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
-import net.minecraft.world.World;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.level.Level;
 
 public class AppleCiderItem extends Item {
 	
@@ -18,7 +18,7 @@ public class AppleCiderItem extends Item {
 		super(new Item.Properties()
 				.tab(Arcanum.arcanum)
 				.durability(10)
-				.food(new Food.Builder()
+				.food(new FoodProperties.Builder()
 						.nutrition(2*2)
 						.saturationMod(5.0F)
 						.build()
@@ -26,11 +26,11 @@ public class AppleCiderItem extends Item {
 				
 				);
 	}
-	
-	public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entityLiving) {
-        if (worldIn.isClientSide)
+
+	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity player) {
+        if (level.isClientSide)
         {
-            entityLiving.addEffect(new EffectInstance(Effects.REGENERATION, 20*8, 5));
+            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20*8, 5));
         }
 		if(this.getDamage(stack) == 10) {
 			return new ItemStack(Items.GLASS_BOTTLE);
@@ -40,8 +40,8 @@ public class AppleCiderItem extends Item {
         return stack;
     }
     
-	public UseAction getUseAnimation(ItemStack stack) {
-		return stack.getItem().isEdible() ? UseAction.DRINK : UseAction.NONE;
+	public UseAnim getUseAnimation(ItemStack stack) {
+		return stack.getItem().isEdible() ? UseAnim.DRINK : UseAnim.NONE;
 	}
 	
 }

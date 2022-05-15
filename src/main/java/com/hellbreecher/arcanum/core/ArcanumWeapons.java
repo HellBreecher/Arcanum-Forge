@@ -1,4 +1,4 @@
-package com.hellbreecher.arcanum.common.core;
+package com.hellbreecher.arcanum.core;
 
 import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
@@ -11,11 +11,11 @@ import com.hellbreecher.arcanum.common.weapons.InfernalSwordItem;
 import com.hellbreecher.arcanum.common.weapons.SapphireBeatingStickItem;
 import com.hellbreecher.arcanum.common.weapons.VoidDiamondBeatingStickItem;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.SwordItem;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = Reference.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class ArcanumWeapons extends IRegistryHandler{

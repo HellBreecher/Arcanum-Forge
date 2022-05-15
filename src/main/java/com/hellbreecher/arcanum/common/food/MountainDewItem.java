@@ -1,16 +1,16 @@
 package com.hellbreecher.arcanum.common.food;
 
 import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.core.ArcanumItems;
+import com.hellbreecher.arcanum.core.ArcanumItems;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.Food;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.UseAction;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
-import net.minecraft.world.World;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.level.Level;
 
 public class MountainDewItem extends Item {
 
@@ -18,7 +18,7 @@ public class MountainDewItem extends Item {
 		super(new Item.Properties()
 				.tab(Arcanum.arcanum)
 				.durability(10)
-				.food(new Food.Builder()
+				.food(new FoodProperties.Builder()
 						.nutrition(2*2)
 						.saturationMod(5.0F)
 						.build()
@@ -27,10 +27,10 @@ public class MountainDewItem extends Item {
 				);
 	}
 	
-	public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entityLiving) {
-        if (worldIn.isClientSide)
+	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity player) {
+        if (level.isClientSide)
         {
-            entityLiving.addEffect(new EffectInstance(Effects.MOVEMENT_SPEED, 20*20, 10));
+        	player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20*20, 10));
         }
 		if(this.getDamage(stack) == 10) {
 			return new ItemStack(ArcanumItems.emptycan.get());
@@ -40,7 +40,7 @@ public class MountainDewItem extends Item {
         return stack;
     }
     
-	public UseAction getUseAnimation(ItemStack stack) {
-		return stack.getItem().isEdible() ? UseAction.DRINK : UseAction.NONE;
+	public UseAnim getUseAnimation(ItemStack stack) {
+		return stack.getItem().isEdible() ? UseAnim.DRINK : UseAnim.NONE;
 	}
 }

@@ -1,12 +1,8 @@
-package com.hellbreecher.arcanum.common.core;
+package com.hellbreecher.arcanum.core;
 
-import com.hellbreecher.arcanum.common.fluids.BeerFluid;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
 import com.hellbreecher.arcanum.common.lib.Reference;
 
-import net.minecraft.fluid.FlowingFluid;
-import net.minecraft.fluid.Fluid;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 

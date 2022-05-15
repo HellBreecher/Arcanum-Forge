@@ -2,8 +2,8 @@ package com.hellbreecher.arcanum.common.items;
 
 import com.hellbreecher.arcanum.Arcanum;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 public class HammerItem extends Item {
     

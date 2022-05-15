@@ -3,12 +3,12 @@ package com.hellbreecher.arcanum.common.tools;
 import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
 
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.Level;
 
 public class InfernalHoeItem extends HoeItem {
 
@@ -16,7 +16,7 @@ public class InfernalHoeItem extends HoeItem {
         super(EnumToolMaterial.InfernalTool, -2, -3.0F, new Item.Properties().tab(Arcanum.arcanum).defaultDurability(-1));
     }
 
-	public void onCraftedBy(ItemStack stack, World worldIn, PlayerEntity playerIn) {
+	public void onCraftedBy(ItemStack stack, Level level, Player player) {
         if (!stack.isEnchanted()) {
             stack.enchant(Enchantments.BLOCK_FORTUNE, 5);
             stack.enchant(Enchantments.UNBREAKING, 10);
