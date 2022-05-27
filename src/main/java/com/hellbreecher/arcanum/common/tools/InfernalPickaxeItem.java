@@ -5,15 +5,18 @@ import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
 import com.hellbreecher.arcanum.core.ArcanumBlocks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Block;
 
 public class InfernalPickaxeItem extends PickaxeItem {
 
@@ -24,16 +27,18 @@ public class InfernalPickaxeItem extends PickaxeItem {
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
-        BlockState regTorch = ArcanumBlocks.greensapphiretorch_block_item.get().getBlock().defaultBlockState();  
-        BlockState wallTorch = ArcanumBlocks.wall_greensapphiretorch_block.get().defaultBlockState();
+        Block regTorch = ArcanumBlocks.greensapphiretorch_block.get();  
+        Block wallTorch = ArcanumBlocks.wall_greensapphiretorch_block.get();
         BlockPos blockpos1 = blockpos.relative(context.getClickedFace());
-        if (level.isClientSide) {
-        	if(context.getClickedFace() == context.getClickedFace().UP || context.getClickedFace() == context.getClickedFace().DOWN) level.setBlock(blockpos1, regTorch, 1);
-        	else level.setBlock(blockpos1, wallTorch, 1);
+        BlockPlaceContext blockP= new BlockPlaceContext(context);
+        Player player = context.getPlayer();
+        if (!level.isClientSide) {
+            Direction face = context.getClickedFace();
+        	if(face == Direction.UP || face == Direction.DOWN) level.setBlock(blockpos1, regTorch.getStateForPlacement(blockP), 1);
+        	else level.setBlock(blockpos1, wallTorch.getStateForPlacement(blockP), 1);
         	return InteractionResult.sidedSuccess(level.isClientSide);
-        } else {
-        	return InteractionResult.FAIL;
-        }
+        } else player.swing(InteractionHand.MAIN_HAND); return InteractionResult.FAIL;
+
      }
 /**
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {

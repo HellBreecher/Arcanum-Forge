@@ -25,7 +25,6 @@ import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 public class InfernalDiamondItem extends Item {
     

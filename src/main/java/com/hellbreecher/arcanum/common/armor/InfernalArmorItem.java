@@ -71,12 +71,9 @@ public class InfernalArmorItem extends ArmorItem {
             //[1 infernalboots, 1 infernalleggings, 1 infernalchestplate, 1 infernalhelmet]
         	
 			if (armorlist.equals(infernalarmor) || armorlist.toString().equals(infernalarmor.toString())) {
-                player.getAbilities().mayfly = true;
-                player.getAbilities().flying = true;
-                player.getAbilities().setFlyingSpeed(0.15F);
+                addAbilities(player);
                 player.getFoodData().setFoodLevel(20);
                 player.setHealth(player.getMaxHealth());
-                player.getAbilities().invulnerable = true;
                 player.addEffect(new MobEffectInstance(MobEffects.JUMP, inf, 15, true, false));
             	player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, inf, 10, true, false));
                 if (level.isClientSide) {
@@ -86,19 +83,34 @@ public class InfernalArmorItem extends ArmorItem {
                 arceffect = true;
             } else if(arceffect) {
                 if (!player.isCreative()) 
-                player.getAbilities().mayfly = false;
-                player.getAbilities().setFlyingSpeed(0.1F);
-                player.removeEffect(MobEffects.JUMP);
-                player.removeEffect(MobEffects.MOVEMENT_SPEED);
-                player.getAbilities().invulnerable = false;
+                	removeAbilities(player);
+                	player.removeEffect(MobEffects.JUMP);
+                	player.removeEffect(MobEffects.MOVEMENT_SPEED);
                 if (level.isClientSide) {
                     instance.options.fovEffectScale = 1.0F;
                     instance.options.screenEffectScale = 1.0F;
                 }
                 arceffect = false;
             }
-        }
-
-		
+        }	
 	}
+	
+	private static void addAbilities(Player player) {
+		if(!player.isCreative() && !player.isSpectator()) {
+			player.getAbilities().mayfly = true;
+			player.getAbilities().setFlyingSpeed(0.15F);
+			player.getAbilities().invulnerable = true;
+			player.onUpdateAbilities();
+		}
+	}
+	
+	private static void removeAbilities(Player player) {
+		if(!player.isCreative() && !player.isSpectator()) {
+        	player.getAbilities().mayfly = false;
+        	player.getAbilities().setFlyingSpeed(0.1F);
+        	player.getAbilities().invulnerable = false;
+			player.onUpdateAbilities();
+		}
+	}
+	
 }
