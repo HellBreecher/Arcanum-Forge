@@ -54,13 +54,11 @@ public class InfernalArmorItem extends ArmorItem {
 	
 	@SubscribeEvent
 	public static void onEquipped(LivingEquipmentChangeEvent event) {
-
+		Level level = event.getEntity().getLevel();
 		if(event.getEntity() instanceof Player) {
-            Minecraft instance = Minecraft.getInstance();
             Player player = (Player) event.getEntity();
         	Iterable<ItemStack> armorlist = player.getArmorSlots();
         	//[1 infernalboots, 1 infernalleggings, 1 infernalchestplate, 1 infernalhelmet]
-            Level level =  player.level;
             int inf = Integer.MAX_VALUE;
             
         	List<ItemStack> infernalarmor = new ArrayList<ItemStack>();
@@ -77,6 +75,7 @@ public class InfernalArmorItem extends ArmorItem {
                 player.addEffect(new MobEffectInstance(MobEffects.JUMP, inf, 15, true, false));
             	player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, inf, 10, true, false));
                 if (level.isClientSide) {
+                    Minecraft instance = Minecraft.getInstance();
                     instance.options.fovEffectScale = 0.0F;
                     instance.options.screenEffectScale = 0.0F;
                 }
@@ -87,6 +86,7 @@ public class InfernalArmorItem extends ArmorItem {
                 	player.removeEffect(MobEffects.JUMP);
                 	player.removeEffect(MobEffects.MOVEMENT_SPEED);
                 if (level.isClientSide) {
+                    Minecraft instance = Minecraft.getInstance();
                     instance.options.fovEffectScale = 1.0F;
                     instance.options.screenEffectScale = 1.0F;
                 }

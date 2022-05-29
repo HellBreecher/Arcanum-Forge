@@ -39,9 +39,7 @@ public class InfernalDiamondArmorItem extends ArmorItem {
     }
     
 	@SubscribeEvent
-	public static void onArmorEquipped(LivingEquipmentChangeEvent event) {
-		
-		
+	public static void onArmorEquipped(LivingEquipmentChangeEvent event) {		
 		if(event.getEntity() instanceof Player) {
 			Player player = (Player) event.getEntity();
 
