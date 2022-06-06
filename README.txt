@@ -25,7 +25,7 @@ Join the Discord - https://discord.com/invite/dDHvtrR
  
 
 The official beta modpack is ArcPack Beta and can be found on the Twitch Launcher or here -
-https://minecraft.curseforge.com/projects/arcpack-beta
+https://www.curseforge.com/minecraft/modpacks/arcpack
 
 Want to join the Official Release/Beta servers for Arcanum? You can do 1 of 2 things.
 1. Fill out an application - https://goo.gl/forms/JKuw08fjE5cePTij1 (Not Guaranteed Acceptance)
