@@ -1,7 +1,7 @@
 package com.hellbreecher.arcanum.common.tools;
 
 import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
+import com.hellbreecher.arcanum.common.lib.EnumToolTier;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level;
 public class InfernalDiamondPickaxeItem extends PickaxeItem {
 
     public InfernalDiamondPickaxeItem() {
-        super(EnumToolMaterial.InfernalDiamondTool, 1, -2.8F, new Properties().tab(Arcanum.arcanum));
+        super(EnumToolTier.InfernalDiamondTool, 1, -2.8F, new Properties().tab(Arcanum.arcanum));
     }
 
 	public void onCraftedBy(ItemStack stack, Level level, Player player) {

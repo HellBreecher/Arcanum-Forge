@@ -24,15 +24,26 @@ public class ArcanumBlocks extends IRegistryHandler {
 
 	//Ore Blocks
 	public static final RegistryObject<OreBlock> greensapphireore_block = BLOCKS.register("greensapphireore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
-			.sound(SoundType.STONE).strength(25.0F, 100.0F).destroyTime(3f)));
+			.sound(SoundType.STONE).strength(25.0F, 100.0F).destroyTime(3f).requiresCorrectToolForDrops()));
 	public static final RegistryObject<OreBlock> blooddiamondore_block = BLOCKS.register("blooddiamondore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
-			.sound(SoundType.STONE).strength(35.0F, 200.0F).destroyTime(3f)));
+			.sound(SoundType.STONE).strength(35.0F, 200.0F).destroyTime(3f).requiresCorrectToolForDrops()));
 	public static final RegistryObject<OreBlock> voiddiamondore_block = BLOCKS.register("voiddiamondore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
-			.sound(SoundType.STONE).strength(45.0F, 360.0F).destroyTime(3f)));
+			.sound(SoundType.STONE).strength(45.0F, 360.0F).destroyTime(3f).requiresCorrectToolForDrops()));
 	public static final RegistryObject<OreBlock> vanillarandomore_block = BLOCKS.register("vanillarandomore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
-			.sound(SoundType.STONE).strength(4.0F, 200.0F).destroyTime(3f)));
+			.sound(SoundType.STONE).strength(4.0F, 200.0F).destroyTime(3f).requiresCorrectToolForDrops()));
     public static final RegistryObject<OreBlock> modrandomore_block = BLOCKS.register("modrandomore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
-    		.sound(SoundType.STONE).strength(4.0F, 200.0F).destroyTime(3f)));
+    		.sound(SoundType.STONE).strength(4.0F, 200.0F).destroyTime(3f).requiresCorrectToolForDrops()));
+    
+	public static final RegistryObject<OreBlock> deepslategreensapphireore_block = BLOCKS.register("deepslate_greensapphireore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+			.sound(SoundType.STONE).strength(25.0F, 100.0F).destroyTime(3f).requiresCorrectToolForDrops()));
+	public static final RegistryObject<OreBlock> deepslateblooddiamondore_block = BLOCKS.register("deepslate_blooddiamondore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+			.sound(SoundType.STONE).strength(35.0F, 200.0F).destroyTime(3f).requiresCorrectToolForDrops()));
+	public static final RegistryObject<OreBlock> deepslatevoiddiamondore_block = BLOCKS.register("deepslate_voiddiamondore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+			.sound(SoundType.STONE).strength(45.0F, 360.0F).destroyTime(3f).requiresCorrectToolForDrops()));
+	public static final RegistryObject<OreBlock> deepslatevanillarandomore_block = BLOCKS.register("deepslate_vanillarandomore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+			.sound(SoundType.STONE).strength(4.0F, 200.0F).destroyTime(3f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<OreBlock> deepslatemodrandomore_block = BLOCKS.register("deepslate_modrandomore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+    		.sound(SoundType.STONE).strength(4.0F, 200.0F).destroyTime(3f).requiresCorrectToolForDrops()));
     //Ore Blocks Items
     public static final RegistryObject<Item> greensapphireore_block_item = ITEMS.register("greensapphireore", () -> new BaseBlockItem(greensapphireore_block.get()));
     public static final RegistryObject<Item> blooddiamondore_block_item = ITEMS.register("blooddiamondore", () -> new BaseBlockItem(blooddiamondore_block.get()));
@@ -40,13 +51,19 @@ public class ArcanumBlocks extends IRegistryHandler {
     public static final RegistryObject<Item> vanillarandomore_block_item = ITEMS.register("vanillarandomore", () -> new BaseBlockItem(vanillarandomore_block.get()));
     public static final RegistryObject<Item> modrandomore_block_item = ITEMS.register("modrandomore", () -> new BaseBlockItem(modrandomore_block.get()));
     
+    public static final RegistryObject<Item> deepslategreensapphireore_block_item = ITEMS.register("deepslate_greensapphireore", () -> new BaseBlockItem(deepslategreensapphireore_block.get()));
+    public static final RegistryObject<Item> deepslateblooddiamondore_block_item = ITEMS.register("deepslate_blooddiamondore", () -> new BaseBlockItem(deepslateblooddiamondore_block.get()));
+    public static final RegistryObject<Item> deepslatevoiddiamondore_block_item = ITEMS.register("deepslate_voiddiamondore", () -> new BaseBlockItem(deepslatevoiddiamondore_block.get()));
+    public static final RegistryObject<Item> deepslatevanillarandomore_block_item = ITEMS.register("deepslate_vanillarandomore", () -> new BaseBlockItem(deepslatevanillarandomore_block.get()));
+    public static final RegistryObject<Item> deepslatemodrandomore_block_item = ITEMS.register("deepslate_modrandomore", () -> new BaseBlockItem(deepslatemodrandomore_block.get()));
+    
     //Ingot Blocks
     public static final RegistryObject<Block> greensapphire_block = BLOCKS.register("greensapphireblock", () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
-    		.sound(SoundType.METAL).strength(25.0F, 900.0F).destroyTime(3f)));
+    		.sound(SoundType.METAL).strength(25.0F, 900.0F).destroyTime(3f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> blooddiamond_block = BLOCKS.register("blooddiamondblock", () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
-    		.sound(SoundType.METAL).strength(35.0F, 180.0F).destroyTime(3f)));
+    		.sound(SoundType.METAL).strength(35.0F, 180.0F).destroyTime(3f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> voiddiamond_block = BLOCKS.register("voiddiamondblock", () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
-    		.sound(SoundType.METAL).strength(45.0F, 360.0F).destroyTime(3f)));
+    		.sound(SoundType.METAL).strength(45.0F, 360.0F).destroyTime(3f).requiresCorrectToolForDrops()));
     //Ingot Block Items
     public static final RegistryObject<Item> greensapphire_block_item = ITEMS.register("greensapphireblock", () -> new BaseBlockItem(greensapphire_block.get()));
     public static final RegistryObject<Item> blooddiamond_block_item = ITEMS.register("blooddiamondblock", () -> new BaseBlockItem(blooddiamond_block.get()));
@@ -54,11 +71,11 @@ public class ArcanumBlocks extends IRegistryHandler {
     
     //Mob Drop Ores
     public static final RegistryObject<OreBlock> boneore_block = BLOCKS.register("boneore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
-    		.sound(SoundType.STONE).strength(1.0F, 15.0F)));
+    		.sound(SoundType.STONE).strength(1.0F, 15.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<OreBlock> fleshore_block = BLOCKS.register("fleshore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
-    		.sound(SoundType.STONE).strength(1.0F, 15.0F)));
+    		.sound(SoundType.STONE).strength(1.0F, 15.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<OreBlock> sulfurore_block = BLOCKS.register("sulfurore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
-    		.sound(SoundType.STONE).strength(1.0F, 15.0F)));;
+    		.sound(SoundType.STONE).strength(1.0F, 15.0F).requiresCorrectToolForDrops()));;
     //Mob Drop Ore Items
     public static final RegistryObject<Item> boneore_block_item = ITEMS.register("boneore", () -> new BaseBlockItem(boneore_block.get()));
     public static final RegistryObject<Item> fleshore_block_item = ITEMS.register("fleshore", () -> new BaseBlockItem(fleshore_block.get()));
@@ -87,7 +104,7 @@ public class ArcanumBlocks extends IRegistryHandler {
     
     //Misc Blocks
     public static final RegistryObject<Block> greensapphirecoal_block = BLOCKS.register("greensapphirecoalblock", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-    		.strength(20.0F, 50.0F).destroyTime(1f))) ;
+    		.strength(20.0F, 50.0F).destroyTime(1f).requiresCorrectToolForDrops())) ;
     //Misc Block Items
     public static final RegistryObject<Item> greensapphirecoal_block_item = ITEMS.register("greensapphirecoalblock", () -> new BaseBlockItem(greensapphirecoal_block.get()));
     

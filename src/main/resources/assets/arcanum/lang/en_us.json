@@ -1,13 +1,19 @@
 {
     "itemGroup.Arcanum": "Arcanum",
     "block.arcanum.blooddiamondore": "Blood Diamond Ore",
+    "block.arcanum.deepslate_blooddiamondore": "Deepslate Blood Diamond Ore",
     "block.arcanum.voiddiamondore": "Void Diamond Ore",
+    "block.arcanum.deepslate_voiddiamondore": "Deepslate Void Diamond Ore",
     "block.arcanum.greensapphireore": "Green Sapphire Ore",
+    "block.arcanum.deepslate_greensapphireore": "Deepslate Green Sapphire Ore",
     "block.arcanum.vanillarandomore": "Vanilla Random Ore",
+    "block.arcanum.deepslate_vanillarandomore": "Deepslate Vanilla Random Ore",
     "block.arcanum.modrandomore": "Mod Random Ore",
+    "block.arcanum.deepslate_modrandomore": "Deepslate Mod Random Ore",
     "block.arcanum.sulfurore": "Sulfur Ore",
     "block.arcanum.boneore": "Bone Ore",
     "block.arcanum.fleshore": "Flesh Ore",
+    
 
     "block.arcanum.blooddiamondblock": "Blood Diamond Block",
     "block.arcanum.voiddiamondblock": "Void Diamond Block",

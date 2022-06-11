@@ -9,11 +9,11 @@ import net.minecraftforge.common.util.Lazy;
 public enum OreType {
 
 	//Ingot Ores
-	GreenSapphireOre(Lazy.of(ArcanumBlocks.greensapphireore_block), 4, 0, 256, 8),
-	BloodDiamondOre(Lazy.of(ArcanumBlocks.blooddiamondore_block), 4, 0, 16, 4),
-	VoidDiamondOre(Lazy.of(ArcanumBlocks.voiddiamondore_block), 2, 0, 12, 2),
-	VanillaRandOre(Lazy.of(ArcanumBlocks.vanillarandomore_block), 8, 0, 256, 5),
-	ModRandomOre(Lazy.of(ArcanumBlocks.modrandomore_block), 8, 0, 16, 3),
+	GreenSapphireOre(Lazy.of(ArcanumBlocks.greensapphireore_block), 4, -80, 256, 8),
+	BloodDiamondOre(Lazy.of(ArcanumBlocks.blooddiamondore_block), 4, -80, 16, 8),
+	VoidDiamondOre(Lazy.of(ArcanumBlocks.voiddiamondore_block), 2, -80, 12, 8),
+	VanillaRandOre(Lazy.of(ArcanumBlocks.vanillarandomore_block), 8, -80, 256, 8),
+	ModRandomOre(Lazy.of(ArcanumBlocks.modrandomore_block), 8, -80, 16, 8),
 	
 	//Mob Drop Ores
 	SulfureOre(Lazy.of(ArcanumBlocks.sulfurore_block), 4, 0, 256, 5),

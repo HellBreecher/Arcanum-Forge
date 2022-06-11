@@ -1,7 +1,7 @@
 package com.hellbreecher.arcanum.common.tools;
 
 import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
+import com.hellbreecher.arcanum.common.lib.EnumToolTier;
 import com.hellbreecher.arcanum.core.ArcanumBlocks;
 
 import net.minecraft.core.BlockPos;
@@ -21,7 +21,7 @@ import net.minecraft.world.level.block.Block;
 public class InfernalPickaxeItem extends PickaxeItem {
 
     public InfernalPickaxeItem() {
-        super(EnumToolMaterial.InfernalTool, 1, -2.8F, new Item.Properties().tab(Arcanum.arcanum).defaultDurability(-1));
+        super(EnumToolTier.InfernalTool, 1, -2.8F, new Item.Properties().tab(Arcanum.arcanum).defaultDurability(-1));
     }
     
     public InteractionResult useOn(UseOnContext context) {

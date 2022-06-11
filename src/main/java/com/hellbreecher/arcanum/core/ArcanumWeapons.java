@@ -2,7 +2,7 @@ package com.hellbreecher.arcanum.core;
 
 import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
-import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
+import com.hellbreecher.arcanum.common.lib.EnumToolTier;
 import com.hellbreecher.arcanum.common.lib.Reference;
 import com.hellbreecher.arcanum.common.weapons.BloodDiamondBeatingStickItem;
 import com.hellbreecher.arcanum.common.weapons.InfernalBeatingStickItem;
@@ -21,11 +21,11 @@ import net.minecraftforge.registries.RegistryObject;
 public class ArcanumWeapons extends IRegistryHandler{
    
 	public static final RegistryObject<SwordItem> greensapphiresword = WEAPONS.register("greensapphiresword", () -> 
-		new SwordItem(EnumToolMaterial.GreenSapphireTool, 1, 0F, new Item.Properties().tab(Arcanum.arcanum)));
+		new SwordItem(EnumToolTier.GreenSapphireTool, 1, 0F, new Item.Properties().tab(Arcanum.arcanum)));
 	public static final RegistryObject<SwordItem> blooddiamondsword = WEAPONS.register("blooddiamondsword", () -> 
-		new SwordItem(EnumToolMaterial.BloodDiamondTool, 1, 0F, new Item.Properties().tab(Arcanum.arcanum)));    
+		new SwordItem(EnumToolTier.BloodDiamondTool, 1, 0F, new Item.Properties().tab(Arcanum.arcanum)));    
 	public static final RegistryObject<SwordItem> voiddiamondsword = WEAPONS.register("voiddiamondsword", () -> 
-		new SwordItem(EnumToolMaterial.VoidDiamondTool, 1, 0F, new Item.Properties().tab(Arcanum.arcanum)));
+		new SwordItem(EnumToolTier.VoidDiamondTool, 1, 0F, new Item.Properties().tab(Arcanum.arcanum)));
 	public static final RegistryObject<SwordItem> infernaldiamondsword = WEAPONS.register("infernaldiamondsword", InfernalDiamondSwordItem::new);
 	public static final RegistryObject<SwordItem> infernalsword = WEAPONS.register("infernalsword", InfernalSwordItem::new);
 	

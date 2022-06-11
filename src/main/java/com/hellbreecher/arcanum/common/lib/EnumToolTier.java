@@ -2,12 +2,12 @@ package com.hellbreecher.arcanum.common.lib;
 
 import java.util.function.Supplier;
 
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.Tier;
-
 import com.hellbreecher.arcanum.core.ArcanumItems;
 
-public enum EnumToolMaterial implements Tier{
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+
+public enum EnumToolTier implements Tier{
 	
 	GreenSapphireTool(5, 1500, 10.0F, 10.0F, 30, () -> {return Ingredient.of(ArcanumItems.greensapphire.get());}),
 	BloodDiamondTool(8, 3000, 20.0F, 50.0F, 30, () -> {return Ingredient.of(ArcanumItems.blooddiamond.get());}),
@@ -28,7 +28,7 @@ public enum EnumToolMaterial implements Tier{
 	private final int enchantability;
 	private final Supplier<Ingredient> repairMaterial;
 	
-	EnumToolMaterial(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
+	EnumToolTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
 		this.harvestLevel = harvestLevel;
 		this.maxUses = maxUses;
 		this.efficiency = efficiency;
@@ -60,5 +60,7 @@ public enum EnumToolMaterial implements Tier{
 	public Ingredient getRepairIngredient() {
 		return repairMaterial.get();
 	}
+	
+	public net.minecraft.tags.TagKey<net.minecraft.world.level.block.Block> getTag() { return com.hellbreecher.arcanum.common.util.ArcanumTags.getTagFromArcanumTier(this); }
 
 }

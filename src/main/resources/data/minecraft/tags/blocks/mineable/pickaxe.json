@@ -1,0 +1,25 @@
+{ 
+	"replace": false,
+	"values": [ 
+		"arcanum:greensapphireore",
+		"arcanum:deepslate_greensapphireore",
+		"arcanum:blooddiamondore",
+		"arcanum:deepslate_blooddiamondore",
+		"arcanum:voiddiamondore",
+		"arcanum:deepslate_voiddiamondore",
+		"arcanum:vanillarandomore",
+		"arcanum:deepslate_vanillarandomore",
+		"arcanum:modrandomore",
+		"arcanum:deepslate_modrandomore",
+		
+		"arcanum:greensapphireblock",
+		"arcanum:blooddiamondblock",
+		"arcanum:voiddiamondblock",
+		
+		"arcanum:boneore",
+		"arcanum:fleshore",
+		"arcanum:sulfurore",
+		
+		"arcanum:greensapphirecoalblock"
+	]
+}

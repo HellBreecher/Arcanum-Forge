@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+		"arcanum:blooddiamondore",
+		"arcanum:deepslate_blooddiamondore",
+		"arcanum:voiddiamondore",
+		"arcanum:deepslate_voiddiamondore",
+		"arcanum:vanillarandomore",
+		"arcanum:deepslate_vanillarandomore",
+		"arcanum:modrandomore",
+		"arcanum:deepslate_modrandomore",
+		
+		"arcanum:blooddiamondblock",
+		"arcanum:voiddiamondblock"
+  ]
+}

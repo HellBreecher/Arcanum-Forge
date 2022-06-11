@@ -18,10 +18,10 @@ public class ArcanumOreGen {
         base.add(ArcanumPlacedFeatures.greensapphireoreplaced);
         base.add(ArcanumPlacedFeatures.blooddiamondoreplaced);
         base.add(ArcanumPlacedFeatures.voiddiamondoreplaced);
-
+        
         base.add(ArcanumPlacedFeatures.vanillarandomoreplaced);
         base.add(ArcanumPlacedFeatures.modrandomoreplaced);
-
+        
         base.add(ArcanumPlacedFeatures.fleshoreplaced);
         base.add(ArcanumPlacedFeatures.boneoreplaced);
         base.add(ArcanumPlacedFeatures.sulfuroreplaced);

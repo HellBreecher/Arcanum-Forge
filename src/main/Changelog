@@ -1,3 +1,10 @@
+###Arcanum 1.18.2-7.0.1.0: 
+	*API
+		Update to Forge 1.18.2 - 40.1.51
+	*New Blocks
+		Deepslate Ores: Green Sapphire, Blood Diamond, Void Diamond, Vanilla Random, Mod Random
+	*Bug Fix
+		Ores not requiring a pickaxe for drops
 ###Arcanum 1.18.2-7.0.0.2: 
 	*Bug Fixes
 		Client Server Connectivity issues

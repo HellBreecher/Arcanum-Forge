@@ -1,7 +1,7 @@
 package com.hellbreecher.arcanum.common.weapons;
 
 import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
+import com.hellbreecher.arcanum.common.lib.EnumToolTier;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level;
 public class VoidDiamondBeatingStickItem extends SwordItem{
 	
     public VoidDiamondBeatingStickItem() {
-        super(EnumToolMaterial.VoidDiamondBeatingStick, 1, -2.4F, new Properties().tab(Arcanum.arcanum));
+        super(EnumToolTier.VoidDiamondBeatingStick, 1, -2.4F, new Properties().tab(Arcanum.arcanum));
 
     }
 

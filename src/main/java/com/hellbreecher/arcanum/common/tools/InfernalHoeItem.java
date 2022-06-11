@@ -1,7 +1,7 @@
 package com.hellbreecher.arcanum.common.tools;
 
 import com.hellbreecher.arcanum.Arcanum;
-import com.hellbreecher.arcanum.common.lib.EnumToolMaterial;
+import com.hellbreecher.arcanum.common.lib.EnumToolTier;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.HoeItem;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.Level;
 public class InfernalHoeItem extends HoeItem {
 
     public InfernalHoeItem() {
-        super(EnumToolMaterial.InfernalTool, -2, -3.0F, new Item.Properties().tab(Arcanum.arcanum).defaultDurability(-1));
+        super(EnumToolTier.InfernalTool, -2, -3.0F, new Item.Properties().tab(Arcanum.arcanum).defaultDurability(-1));
     }
 
 	public void onCraftedBy(ItemStack stack, Level level, Player player) {

@@ -15,7 +15,7 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle'
 
 
-version = '1.18.2-7.0.0.2'
+version = '1.18.2-7.0.1.0'
 group = 'com.hellbreecher.arcanum' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'arcanum'
 
@@ -88,7 +88,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.25'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.51'
 }
 
 jar {

@@ -15,33 +15,38 @@ public class ArcanumConfiguredFeatures {
 
 	//ingot ores
 	public static final List<OreConfiguration.TargetBlockState> overworldgreensapphireore = List.of(
-			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.greensapphireore_block.get().defaultBlockState())
+			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.greensapphireore_block.get().defaultBlockState()),
+			OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ArcanumBlocks.deepslategreensapphireore_block.get().defaultBlockState())
 			);
 
 	public static final List<OreConfiguration.TargetBlockState> overworldblooddiamondore = List.of(
-			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.blooddiamondore_block.get().defaultBlockState())
+			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.blooddiamondore_block.get().defaultBlockState()),
+			OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ArcanumBlocks.deepslateblooddiamondore_block.get().defaultBlockState())
 			);
 
 	public static final List<OreConfiguration.TargetBlockState> overworldvoiddiamondore = List.of(
-			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.voiddiamondore_block.get().defaultBlockState())
+			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.voiddiamondore_block.get().defaultBlockState()),
+			OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ArcanumBlocks.deepslatevoiddiamondore_block.get().defaultBlockState())
 			);
 	
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> greensapphireore = FeatureUtils.register("greensapphireore", Feature.ORE, new OreConfiguration(overworldgreensapphireore, 8));
-	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> blooddiamondore = FeatureUtils.register("blooddiamondore", Feature.ORE, new OreConfiguration(overworldblooddiamondore, 4));
-	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> voiddiamodnore = FeatureUtils.register("voiddiamondore", Feature.ORE, new OreConfiguration(overworldvoiddiamondore, 2));
-	
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> blooddiamondore = FeatureUtils.register("blooddiamondore", Feature.ORE, new OreConfiguration(overworldblooddiamondore, 8));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> voiddiamodnore = FeatureUtils.register("voiddiamondore", Feature.ORE, new OreConfiguration(overworldvoiddiamondore, 8));
+
 	//random ores
 	public static final List<OreConfiguration.TargetBlockState> overworldvanillarandomore = List.of(
-			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.vanillarandomore_block.get().defaultBlockState())
+			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.vanillarandomore_block.get().defaultBlockState()),
+			OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ArcanumBlocks.deepslatevanillarandomore_block.get().defaultBlockState())
 			);
 
 	public static final List<OreConfiguration.TargetBlockState> overworldmodrandomore = List.of(
-			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.modrandomore_block.get().defaultBlockState())
+			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.modrandomore_block.get().defaultBlockState()),
+			OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ArcanumBlocks.deepslatemodrandomore_block.get().defaultBlockState())
 			);
-
-	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> vanillarandomore = FeatureUtils.register("vanillarandomore", Feature.ORE, new OreConfiguration(overworldvanillarandomore, 5));
-	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> modrandomore = FeatureUtils.register("modrandomore", Feature.ORE, new OreConfiguration(overworldmodrandomore, 3));
 	
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> vanillarandomore = FeatureUtils.register("vanillarandomore", Feature.ORE, new OreConfiguration(overworldvanillarandomore, 5));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> modrandomore = FeatureUtils.register("modrandomore", Feature.ORE, new OreConfiguration(overworldmodrandomore, 5));
+
 	//mob drop ores
 	public static final List<OreConfiguration.TargetBlockState> overworldfleshore = List.of(
 			OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ArcanumBlocks.fleshore_block.get().defaultBlockState())
