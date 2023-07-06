@@ -1,7 +1,7 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "torch": "arcanum:blocks/greensapphiretorch",
+        "torch": "arcanum:block/greensapphiretorch",
         "particle": "#torch"
     },
     "elements": [

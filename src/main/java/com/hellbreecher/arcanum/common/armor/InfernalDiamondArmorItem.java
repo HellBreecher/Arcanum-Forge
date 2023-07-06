@@ -3,14 +3,12 @@ package com.hellbreecher.arcanum.common.armor;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.lib.EnumArmorMaterial;
 import com.hellbreecher.arcanum.common.lib.Reference;
 import com.hellbreecher.arcanum.core.ArcanumArmor;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -27,8 +25,8 @@ public class InfernalDiamondArmorItem extends ArmorItem {
 
 	static boolean arceffect;
 	
-    public InfernalDiamondArmorItem(EquipmentSlot slot) {
-        super(EnumArmorMaterial.InfernalDiamondArmor, slot, new Item.Properties().tab(Arcanum.arcanum));
+    public InfernalDiamondArmorItem(Type slot) {
+        super(EnumArmorMaterial.InfernalDiamondArmor, slot, new Item.Properties());
     }
 
     public void onCraftedBy(ItemStack stack, Level level, Player player) {

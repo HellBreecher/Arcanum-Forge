@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures":{
-        "layer0": "arcanum:items/sapphirebeatingstick"
+        "layer0": "arcanum:item/sapphirebeatingstick"
     }
 }

@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 import com.hellbreecher.arcanum.client.ClientSetup;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
 import com.hellbreecher.arcanum.common.lib.Reference;
-import com.hellbreecher.arcanum.core.ArcanumItemGroup;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,8 +21,6 @@ public class Arcanum {
     public static final Logger Logger = LogManager.getLogger(Reference.MODID);
 
     public static Arcanum instance;
-
-    public static final ArcanumItemGroup arcanum = new ArcanumItemGroup();
     
     public Arcanum() {
         IEventBus event = FMLJavaModLoadingContext.get().getModEventBus();
@@ -34,8 +31,9 @@ public class Arcanum {
     	event.addListener(this::setup);
     	event.addListener(this::clientSetup);
     	
-        //IClientRegistryHandler.registryInit();
-        IRegistryHandler.registryInit();  
+        IRegistryHandler iRegistryHandler = new IRegistryHandler();
+		//IClientRegistryHandler.registryInit();
+        iRegistryHandler.registryInit();  
     }
     
     //common setup

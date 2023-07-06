@@ -1,6 +1,5 @@
 package com.hellbreecher.arcanum.common.tools;
 
-import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.lib.EnumToolTier;
 
 import net.minecraft.world.entity.player.Player;
@@ -13,7 +12,7 @@ import net.minecraft.world.level.Level;
 public class InfernalShovelItem extends ShovelItem {
 
     public InfernalShovelItem() {
-        super(EnumToolTier.InfernalTool, 1.5F, -3.0F, new Item.Properties().tab(Arcanum.arcanum).defaultDurability(-1));
+        super(EnumToolTier.InfernalTool, 1.5F, -3.0F, new Item.Properties().defaultDurability(-1));
     }
     //TODO: Infernal Shovel drop rate increase
     /**

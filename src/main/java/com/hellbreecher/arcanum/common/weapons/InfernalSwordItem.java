@@ -1,6 +1,5 @@
 package com.hellbreecher.arcanum.common.weapons;
 
-import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.lib.EnumToolTier;
 
 import net.minecraft.world.entity.player.Player;
@@ -12,7 +11,7 @@ import net.minecraft.world.level.Level;
 public class InfernalSwordItem extends SwordItem {
 
     public InfernalSwordItem() {
-        super(EnumToolTier.InfernalTool, 1, -2.4F, new Properties().tab(Arcanum.arcanum));
+        super(EnumToolTier.InfernalTool, 1, -2.4F, new Properties());
     }
 
 	public void onCraftedBy(ItemStack stack, Level level, Player player) {

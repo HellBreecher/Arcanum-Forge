@@ -3,7 +3,6 @@ package com.hellbreecher.arcanum.common.armor;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.lib.EnumArmorMaterial;
 import com.hellbreecher.arcanum.common.lib.Reference;
 import com.hellbreecher.arcanum.core.ArcanumArmor;
@@ -11,13 +10,13 @@ import com.hellbreecher.arcanum.core.ArcanumArmor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.client.event.ScreenEvent.KeyPressed;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,8 +27,8 @@ public class InfernalArmorItem extends ArmorItem {
 
 	static boolean arceffect;
 
-	public InfernalArmorItem(EquipmentSlot slot) {
-        super(EnumArmorMaterial.InfernalArmor, slot, new Item.Properties().tab(Arcanum.arcanum).durability(-1));
+	public InfernalArmorItem(Type slot) {
+        super(EnumArmorMaterial.InfernalArmor, slot, new Item.Properties().durability(Integer.MAX_VALUE));
     }
 
     public void onCraftedBy(ItemStack stack, Level level, Player player) {
@@ -51,10 +50,11 @@ public class InfernalArmorItem extends ArmorItem {
 
         }
     }
+
 	
 	@SubscribeEvent
 	public static void onEquipped(LivingEquipmentChangeEvent event) {
-		Level level = event.getEntity().getLevel();
+		Level level = event.getEntity().level();
 		if(event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
         	Iterable<ItemStack> armorlist = player.getArmorSlots();
@@ -72,12 +72,12 @@ public class InfernalArmorItem extends ArmorItem {
                 addAbilities(player);
                 player.getFoodData().setFoodLevel(20);
                 player.setHealth(player.getMaxHealth());
-                player.addEffect(new MobEffectInstance(MobEffects.JUMP, inf, 15, true, false));
-            	player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, inf, 10, true, false));
+                player.addEffect(new MobEffectInstance(MobEffects.JUMP, inf, 6, true, false));
+            	player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, inf, 6, true, false));
                 if (level.isClientSide) {
                     Minecraft instance = Minecraft.getInstance();
-                    instance.options.fovEffectScale = 0.0F;
-                    instance.options.screenEffectScale = 0.0F;
+                    instance.options.fovEffectScale().set(0.0);
+                    instance.options.screenEffectScale().set(0.0);
                 }
                 arceffect = true;
             } else if(arceffect) {
@@ -87,8 +87,8 @@ public class InfernalArmorItem extends ArmorItem {
                 	player.removeEffect(MobEffects.MOVEMENT_SPEED);
                 if (level.isClientSide) {
                     Minecraft instance = Minecraft.getInstance();
-                    instance.options.fovEffectScale = 1.0F;
-                    instance.options.screenEffectScale = 1.0F;
+                    instance.options.fovEffectScale().set(1.0);
+                    instance.options.screenEffectScale().set(1.0);
                 }
                 arceffect = false;
             }

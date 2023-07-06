@@ -1,7 +1,5 @@
 package com.hellbreecher.arcanum.common.items;
 
-import com.hellbreecher.arcanum.Arcanum;
-
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
@@ -9,7 +7,6 @@ public class HammerItem extends Item {
     
 	public HammerItem() {
     	super(new Item.Properties()
-    			.tab(Arcanum.arcanum)
     			.stacksTo(1)
     			.durability(25)
     			);
@@ -18,7 +15,7 @@ public class HammerItem extends Item {
     public boolean doesContainerItemLeaveCraftingGrid(ItemStack stack) {
         return true;
     }
-
+/** TODO: Fix Leave in Craftin Table
     @Override
     public ItemStack getContainerItem(ItemStack stack) {
         ItemStack damageStack = stack.copy();
@@ -32,4 +29,5 @@ public class HammerItem extends Item {
     public boolean hasContainerItem(ItemStack stack) {
         return true;
     }
+*/
 }

@@ -1,6 +1,5 @@
 package com.hellbreecher.arcanum.common.tools;
 
-import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.lib.EnumToolTier;
 
 import net.minecraft.world.entity.player.Player;
@@ -13,7 +12,7 @@ import net.minecraft.world.level.Level;
 public class InfernalDiamondShovelItem extends ShovelItem {
 
     public InfernalDiamondShovelItem() {
-        super(EnumToolTier.InfernalDiamondTool, 1.5F, -3.0F, new Item.Properties().tab(Arcanum.arcanum));
+        super(EnumToolTier.InfernalDiamondTool, 1.5F, -3.0F, new Item.Properties());
     }
 
 	public void onCraftedBy(ItemStack stack, Level level, Player player) {

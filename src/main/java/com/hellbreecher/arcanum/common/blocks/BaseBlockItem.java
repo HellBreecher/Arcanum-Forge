@@ -2,7 +2,6 @@ package com.hellbreecher.arcanum.common.blocks;
 
 import org.jetbrains.annotations.Nullable;
 
-import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.core.ArcanumBlocks;
 
 import net.minecraft.world.item.BlockItem;
@@ -14,7 +13,7 @@ import net.minecraft.world.level.block.Block;
 public class BaseBlockItem extends BlockItem {
 
 	public BaseBlockItem(Block blockIn) {
-		super(blockIn, new Item.Properties().tab(Arcanum.arcanum));
+		super(blockIn, new Item.Properties());
 	}
 
     public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {

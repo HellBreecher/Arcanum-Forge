@@ -1,7 +1,5 @@
 package com.hellbreecher.arcanum.common.food;
 
-import com.hellbreecher.arcanum.Arcanum;
-
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,7 +14,6 @@ public class CortonWineItem extends Item {
 	
 	public CortonWineItem() {
 		super(new Item.Properties()
-				.tab(Arcanum.arcanum)
 				.durability(10)
 				.food(new FoodProperties.Builder()
 						.alwaysEat()

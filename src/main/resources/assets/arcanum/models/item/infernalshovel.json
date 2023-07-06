@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures":{
-        "layer0": "arcanum:items/infernalshovel"
+        "layer0": "arcanum:item/infernalshovel"
     }
 }

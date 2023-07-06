@@ -1,6 +1,6 @@
 {
 	"parent":"block/cube_all",
 	"textures":{
-		"all": "arcanum:blocks/deepslate_modrandomore"
+		"all": "arcanum:block/deepslate_modrandomore"
 	}
 }

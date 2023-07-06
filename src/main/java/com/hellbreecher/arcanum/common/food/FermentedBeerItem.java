@@ -1,6 +1,5 @@
 package com.hellbreecher.arcanum.common.food;
 
-import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.core.ArcanumItems;
 
 import net.minecraft.world.effect.MobEffectInstance;
@@ -16,7 +15,6 @@ public class FermentedBeerItem extends Item {
 	
     public FermentedBeerItem() {
         super(new Item.Properties()
-        		.tab(Arcanum.arcanum)
         		.durability(10)
         		.food(new FoodProperties.Builder()
         				.alwaysEat()

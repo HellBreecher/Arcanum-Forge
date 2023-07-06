@@ -1,6 +1,6 @@
 {
 	"parent":"item/generated",
 	"textures":{
-		"layer0": "arcanum:items/voiddiamondleggings"
+		"layer0": "arcanum:item/voiddiamondleggings"
 	}
 }

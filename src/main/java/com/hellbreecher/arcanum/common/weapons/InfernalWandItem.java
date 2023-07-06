@@ -1,7 +1,5 @@
 package com.hellbreecher.arcanum.common.weapons;
 
-import com.hellbreecher.arcanum.Arcanum;
-
 import net.minecraft.world.item.Item;
 
 public class InfernalWandItem extends Item {
@@ -9,7 +7,7 @@ public class InfernalWandItem extends Item {
 	//TODO: Infernal Wand make do something
 	
     public InfernalWandItem() {
-        super(new Properties().tab(Arcanum.arcanum));
+        super(new Properties());
     }
 /**
 	public void onCraftedBy(ItemStack stack, World worldIn, PlayerEntity playerIn) {

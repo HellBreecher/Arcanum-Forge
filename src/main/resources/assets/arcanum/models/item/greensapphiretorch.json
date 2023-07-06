@@ -1,6 +1,6 @@
 {
     "parent":"item/generated",
     "textures": {
-        "layer0": "arcanum:blocks/greensapphiretorch"
+        "layer0": "arcanum:block/greensapphiretorch"
     }
 }

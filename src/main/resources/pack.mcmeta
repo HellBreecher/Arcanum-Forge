@@ -1,6 +1,9 @@
 {
-    "pack": {
-        "description": "arcanum resources",
-        "pack_format": 9
-    }
+  "pack": {
+    "description": {
+      "text": "arcanum resources"
+    },
+    "forge:server_data_pack_format": 12,
+    "pack_format": 13
+  }
 }

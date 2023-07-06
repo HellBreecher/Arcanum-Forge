@@ -1,6 +1,5 @@
 package com.hellbreecher.arcanum.common.food;
 
-import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.core.ArcanumItems;
 
 import net.minecraft.world.entity.LivingEntity;
@@ -14,7 +13,6 @@ public class UnfermentedBeerItem extends Item {
 
     public UnfermentedBeerItem() {
         super(new Item.Properties()
-        		.tab(Arcanum.arcanum)
         		.durability(10)
         		.food(new FoodProperties.Builder()
         				.alwaysEat()

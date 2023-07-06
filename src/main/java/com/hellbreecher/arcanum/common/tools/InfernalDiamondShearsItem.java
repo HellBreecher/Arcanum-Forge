@@ -1,7 +1,5 @@
 package com.hellbreecher.arcanum.common.tools;
 
-import com.hellbreecher.arcanum.Arcanum;
-
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShearsItem;
@@ -11,7 +9,7 @@ import net.minecraft.world.level.Level;
 public class InfernalDiamondShearsItem extends ShearsItem {
 
     public InfernalDiamondShearsItem() {
-        super(new Properties().tab(Arcanum.arcanum).defaultDurability(8000));
+        super(new Properties().defaultDurability(8000));
     }
 
 	public void onCraftedBy(ItemStack stack, Level level, Player player) {

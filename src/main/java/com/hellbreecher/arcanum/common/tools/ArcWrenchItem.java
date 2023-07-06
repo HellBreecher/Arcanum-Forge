@@ -1,7 +1,5 @@
 package com.hellbreecher.arcanum.common.tools;
 
-import com.hellbreecher.arcanum.Arcanum;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -15,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class ArcWrenchItem extends Item {
 	
     public ArcWrenchItem() {
-        super(new Item.Properties().tab(Arcanum.arcanum).stacksTo(1));
+        super(new Item.Properties().stacksTo(1));
     }
 
     public InteractionResult useOn(UseOnContext context) {

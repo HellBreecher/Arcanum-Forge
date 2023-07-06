@@ -1,13 +1,13 @@
 {
     "parent": "block/orientable",
     "textures": {
-        "particle": "arcanum:blocks/fermenter_front",
-        "up": "arcanum:blocks/fermenter_top",
-        "down": "arcanum:blocks/fermenter_top",
-        "north": "arcanum:blocks/fermenter_front",
-        "east": "arcanum:blocks/fermenter_sides",
-        "south": "arcanum:blocks/fermenter_sides",
-        "west": "arcanum:blocks/fermenter_sides"
+        "particle": "arcanum:block/fermenter_front",
+        "up": "arcanum:block/fermenter_top",
+        "down": "arcanum:block/fermenter_top",
+        "north": "arcanum:block/fermenter_front",
+        "east": "arcanum:block/fermenter_sides",
+        "south": "arcanum:block/fermenter_sides",
+        "west": "arcanum:block/fermenter_sides"
         
     }	
 }

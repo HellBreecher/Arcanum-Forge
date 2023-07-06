@@ -1,6 +1,6 @@
 {
 	"parent":"item/generated",
 	"textures":{
-		"layer0": "arcanum:items/voiddiamond"
+		"layer0": "arcanum:item/voiddiamond"
 	}
 }

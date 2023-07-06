@@ -2,7 +2,6 @@ package com.hellbreecher.arcanum.common.items;
 
 import org.jetbrains.annotations.Nullable;
 
-import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.core.ArcanumItems;
 
 import net.minecraft.advancements.CriteriaTriggers;
@@ -30,7 +29,6 @@ public class InfernalDiamondItem extends Item {
     
 	public InfernalDiamondItem() {
     	super(new Item.Properties()
-    			.tab(Arcanum.arcanum)
     			.stacksTo(1)
     			.fireResistant()
     			);    	

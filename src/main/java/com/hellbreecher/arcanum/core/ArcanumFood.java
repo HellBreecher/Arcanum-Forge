@@ -1,6 +1,5 @@
 package com.hellbreecher.arcanum.core;
 
-import com.hellbreecher.arcanum.Arcanum;
 import com.hellbreecher.arcanum.common.food.AppleCiderItem;
 import com.hellbreecher.arcanum.common.food.CortonWineItem;
 import com.hellbreecher.arcanum.common.food.FermentedBeerItem;
@@ -21,13 +20,13 @@ public class ArcanumFood extends IRegistryHandler{
 	
 	//Foods
 	public static final RegistryObject<Item> crushedapple = FOODS.register("crushedapple", () -> new Item(new Item
-			.Properties().tab(Arcanum.arcanum)
+			.Properties()
 			.food(new FoodProperties.Builder()
 					.nutrition(2)
 					.saturationMod(2.0F)
 					.build())));
 	public static final RegistryObject<Item> toast = FOODS.register("toast", () -> new Item(new Item
-			.Properties().tab(Arcanum.arcanum)
+			.Properties()
 			.food(new FoodProperties.Builder()
 					.nutrition(10)
 					.saturationMod(10.0F)

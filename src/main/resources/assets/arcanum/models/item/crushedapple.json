@@ -1,6 +1,6 @@
 {
 	"parent":"item/generated",
 	"textures":{
-		"layer0": "arcanum:items/crushedapple"
+		"layer0": "arcanum:item/crushedapple"
 	}
 }

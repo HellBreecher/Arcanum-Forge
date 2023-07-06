@@ -1,7 +1,5 @@
 package com.hellbreecher.arcanum.common.tools;
 
-import com.hellbreecher.arcanum.Arcanum;
-
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -12,7 +10,7 @@ import net.minecraft.world.level.Level;
 public class InfernalShearsItem extends ShearsItem {
 
     public InfernalShearsItem() {
-        super(new Item.Properties().tab(Arcanum.arcanum).defaultDurability(-1));
+        super(new Item.Properties().defaultDurability(-1));
     }
     
     //TODO: Infernal Shears drop rate increase
