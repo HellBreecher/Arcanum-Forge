@@ -2,7 +2,7 @@ package com.hellbreecher.arcanum.common.blocks.container;
 
 public class FermenterContainer  {
 	
-	/**
+/**
     private final IInventory tileFermenter;
     private int fermentTime;
     private int totalFermentTime;

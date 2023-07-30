@@ -1,6 +1,6 @@
 package com.hellbreecher.arcanum.core;
 
-import com.hellbreecher.arcanum.common.blocks.BaseBlockItem;
+import com.hellbreecher.arcanum.common.blocks.*;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
 import com.hellbreecher.arcanum.common.lib.Reference;
 
@@ -9,6 +9,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.WallTorchBlock;
@@ -107,13 +108,16 @@ public class ArcanumBlocks extends IRegistryHandler {
     //Misc Block Items
     public static final RegistryObject<Item> greensapphirecoal_block_item = ITEMS.register("greensapphirecoalblock", () -> new BaseBlockItem(greensapphirecoal_block.get()));
     
+    //Tile Entity
+    //public static final RegistryObject<Block> fermenter_block = Blocks.register("fermenterblock", () -> new FermenterBlock.fermenterBlock());
+    //TileEntity Items
+   // public static final RegistryObject<Item> fermenter_block_item = ITEMS.register("fermenterblock", new BaseBlockItem(fermenter_block.get()));
+
     
     //FluidBlocks
    // @SuppressWarnings("deprecation")
 	//public static final RegistryObject<Block> BEER = BLOCKS.register("beer", () -> new FlowingFluidBlock((FlowingFluid) ArcanumFluids.BEER.get(), AbstractBlock.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()));
     //Fluid Blocks Items
    // public static final RegistryObject<BucketItem> BEER_BUCKET = ITEMS.register("beer_bucket", () -> new BucketItemBase(ArcanumFluids.BEER, (new Item.Properties()).containerItem(Items.BUCKET).maxStackSize(1).group(Arcanum.arcanum)));
-    //Tile Entity
-    //TileEntity Items
 
 }

@@ -47,11 +47,11 @@ public enum EnumArmorMaterial implements ArmorMaterial {
 		}), 30, SoundEvents.ARMOR_EQUIP_GENERIC, 80.0F, 1.0F, () -> {
 			return Ingredient.of(ArcanumItems.infernaldiamond.get());
 		}),
-	InfernalArmor("arcanum:infernalarmor", 9999, Util.make(new EnumMap<>(ArmorItem.Type.class), (idm) -> {
-		idm.put(ArmorItem.Type.BOOTS, 9999); 
-		idm.put(ArmorItem.Type.LEGGINGS, 9999);
-		idm.put(ArmorItem.Type.CHESTPLATE, 9999);
-		idm.put(ArmorItem.Type.HELMET, 9999); 
+	InfernalArmor("arcanum:infernalarmor", 0, Util.make(new EnumMap<>(ArmorItem.Type.class), (idm) -> {
+		idm.put(ArmorItem.Type.BOOTS, 0); 
+		idm.put(ArmorItem.Type.LEGGINGS, 0);
+		idm.put(ArmorItem.Type.CHESTPLATE, 0);
+		idm.put(ArmorItem.Type.HELMET, 0); 
 		}), 30, SoundEvents.ARMOR_EQUIP_GENERIC, 9999.0F, 10.0F, () -> {
 			return Ingredient.of(ArcanumItems.infernaldiamond.get());
 		});

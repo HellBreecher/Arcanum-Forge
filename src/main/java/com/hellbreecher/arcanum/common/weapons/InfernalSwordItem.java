@@ -11,7 +11,7 @@ import net.minecraft.world.level.Level;
 public class InfernalSwordItem extends SwordItem {
 
     public InfernalSwordItem() {
-        super(EnumToolTier.InfernalTool, 1, -2.4F, new Properties());
+        super(EnumToolTier.InfernalTool, 1, -2.4F, new Properties().durability(-1));
     }
 
 	public void onCraftedBy(ItemStack stack, Level level, Player player) {

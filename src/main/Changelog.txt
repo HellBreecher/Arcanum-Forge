@@ -1,3 +1,12 @@
+###Arcanum 1.20.1-8.0.0.2: 
+	*API
+		Update to Forge 1.20.1 - 47.1.43
+	*Bug Fix
+		Infernal Sword breaking after 1 use
+		Infernal Armor taking damage
+###Arcanum 1.20.1-8.0.0.1: 
+	*Bug Fix
+		Creative tab title not appearing
 ###Arcanum 1.20.1-8.0.0.0: 
 	*API
 		Update to Forge 1.20.1-47.0.49

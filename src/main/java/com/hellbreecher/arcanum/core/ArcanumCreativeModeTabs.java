@@ -3,6 +3,7 @@ package com.hellbreecher.arcanum.core;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
 import com.hellbreecher.arcanum.common.lib.Reference;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
@@ -13,6 +14,7 @@ public class ArcanumCreativeModeTabs extends IRegistryHandler{
 	
 	public static final RegistryObject<CreativeModeTab> ArcanumTab = ARCANUMTABS.register("arcanum",() -> CreativeModeTab.builder()
 			.icon(() -> new ItemStack(ArcanumItems.infernaldiamond.get()))
+			.title(Component.translatable(new String("Arcanum")))
 			.displayItems((parameters, output) -> {
 			//Armor
 				//GreenSapphire

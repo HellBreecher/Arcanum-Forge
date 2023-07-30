@@ -16,7 +16,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.client.event.ScreenEvent.KeyPressed;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,7 +27,7 @@ public class InfernalArmorItem extends ArmorItem {
 	static boolean arceffect;
 
 	public InfernalArmorItem(Type slot) {
-        super(EnumArmorMaterial.InfernalArmor, slot, new Item.Properties().durability(Integer.MAX_VALUE));
+        super(EnumArmorMaterial.InfernalArmor, slot, new Item.Properties());
     }
 
     public void onCraftedBy(ItemStack stack, Level level, Player player) {
