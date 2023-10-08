@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import com.hellbreecher.arcanum.client.ClientSetup;
 import com.hellbreecher.arcanum.common.handler.IRegistryHandler;
 import com.hellbreecher.arcanum.common.lib.Reference;
+import com.hellbreecher.arcanum.common.util.ArcanumEventBus;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,6 +26,7 @@ public class Arcanum {
     public Arcanum() {
         IEventBus event = FMLJavaModLoadingContext.get().getModEventBus();
     	MinecraftForge.EVENT_BUS.register(this);	
+    	MinecraftForge.EVENT_BUS.register(new ArcanumEventBus());
     	instance = this;
     	
     	//register methods for mod loading    	

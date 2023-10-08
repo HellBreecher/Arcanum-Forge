@@ -1,3 +1,6 @@
+###Arcanum 1.20.2-8.1.0.0:
+	*API
+		Update to Forge 1.20.2 - 48.0.20
 ###Arcanum 1.20.1-8.0.0.2: 
 	*API
 		Update to Forge 1.20.1 - 47.1.43
