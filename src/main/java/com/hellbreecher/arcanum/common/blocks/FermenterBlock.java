@@ -1,5 +1,7 @@
 package com.hellbreecher.arcanum.common.blocks;
 
+import com.mojang.serialization.MapCodec;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -31,4 +33,10 @@ public class FermenterBlock extends AbstractFurnaceBlock{
 	protected void openContainer(Level p_48690_, BlockPos p_48691_, Player p_48692_) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	protected MapCodec<? extends AbstractFurnaceBlock> codec() {
+		// TODO Auto-generated method stub
+		return null;
 	}}

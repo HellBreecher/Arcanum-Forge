@@ -3,7 +3,6 @@ package com.hellbreecher.arcanum.common.datagen;
 import java.util.function.Consumer;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -14,7 +13,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(output);
     }
 
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    protected <FinishedRecipe> void buildRecipes(Consumer<FinishedRecipe> consumer) {
 
     }
 

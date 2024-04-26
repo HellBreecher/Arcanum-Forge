@@ -94,10 +94,10 @@ public class ArcanumBlocks extends IRegistryHandler {
     public static final RegistryObject<Item> sulfur_block_item = ITEMS.register("sulfurblock", () -> new BaseBlockItem(sulfur_block.get()));
     
     //Wall & Floor Blocks
-    public static final RegistryObject<TorchBlock> greensapphiretorch_block = BLOCKS.register("greensapphiretorch", () -> new TorchBlock(BlockBehaviour.Properties.of()
-    		.noCollission().instabreak().lightLevel((p_50886_) -> {return 14;}).sound(SoundType.WOOD), ParticleTypes.FLAME));
-    public static final RegistryObject<WallTorchBlock> wall_greensapphiretorch_block = BLOCKS.register("wall_greensapphiretorch", () -> new WallTorchBlock(BlockBehaviour.Properties.of()
-    		.noCollission().instabreak().lightLevel((p_50886_) -> {return 14;}).sound(SoundType.WOOD).dropsLike(greensapphiretorch_block.get()).pushReaction(PushReaction.DESTROY), ParticleTypes.FLAME));
+    public static final RegistryObject<TorchBlock> greensapphiretorch_block = BLOCKS.register("greensapphiretorch", () -> new TorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.of()
+					.noCollission().instabreak().lightLevel((p_50886_) -> {return 14;}).sound(SoundType.WOOD)));
+    public static final RegistryObject<WallTorchBlock> wall_greensapphiretorch_block = BLOCKS.register("wall_greensapphiretorch", () -> new WallTorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.of()
+					.noCollission().instabreak().lightLevel((p_50886_) -> {return 14;}).sound(SoundType.WOOD).dropsLike(greensapphiretorch_block.get()).pushReaction(PushReaction.DESTROY)));
 
     //Standing & Wall Block Items
     public static final RegistryObject<StandingAndWallBlockItem> greensapphiretorch_block_item = ITEMS.register("greensapphiretorch", () -> new StandingAndWallBlockItem(greensapphiretorch_block.get(), wall_greensapphiretorch_block.get(), new Item.Properties(), Direction.DOWN));
